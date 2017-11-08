@@ -2,10 +2,13 @@ package entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Pawnshop implements Serializable {
@@ -58,5 +61,17 @@ public class Pawnshop implements Serializable {
 	public void setCredential(String credential) {
 		this.credential = credential;
 	}
+	
+	@OneToOne(mappedBy="pawnshopId", cascade={CascadeType.ALL})
+	private ProposePrice proposerice;
+
+	public ProposePrice getProposerice() {
+		return proposerice;
+	}
+
+	public void setProposerice(ProposePrice proposerice) {
+		this.proposerice = proposerice;
+	}
+	
 
 }

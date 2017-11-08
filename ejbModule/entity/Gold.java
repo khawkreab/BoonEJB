@@ -1,11 +1,16 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Gold implements Serializable{
@@ -20,6 +25,7 @@ public class Gold implements Serializable{
 	private String goldWeight;
 	private String goldPic;
 	private String goldDetail;
+	
 	public long getGoldId() {
 		return goldId;
 	}
@@ -63,5 +69,24 @@ public class Gold implements Serializable{
 		this.goldDetail = goldDetail;
 	}
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	private Pawner pawnerId;
+
+	public Pawner getPawner() {
+		return pawnerId;
+	}
+	public void setPawner(Pawner pawnerId) {
+		this.pawnerId = pawnerId;
+	}
+	
+	@OneToMany(mappedBy="goldId", cascade={CascadeType.ALL})
+	private List<ProposePrice> proposeprice;
+
+	public List<ProposePrice> getProposeprice() {
+		return proposeprice;
+	}
+	public void setProposeprice(List<ProposePrice> proposeprice) {
+		this.proposeprice = proposeprice;
+	}
 	
 }

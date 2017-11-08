@@ -15,7 +15,8 @@ import service.ProposePriceService;
 @Stateless
 @Remote(ProposePriceService.class)
 public class ProposePriceServiceBean implements ProposePriceService{
-	@PersistenceContext(unitName = "proposepriceDatabase")
+	
+	@PersistenceContext(unitName = "employeeDatabase")
 	EntityManager em;
 	
 	@Override

@@ -2,14 +2,19 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -56,5 +61,31 @@ public class ProposePrice implements Serializable {
 	public void setProposeDate(Date proposeDate) {
 		this.proposeDate = proposeDate;
 	}
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	private Gold goldId;
+
+	public Gold getGoldId() {
+		return goldId;
+	}
+
+	public void setGoldId(Gold goldId) {
+		this.goldId = goldId;
+	}
+	
+	@OneToOne
+	public Pawnshop pawnshopId;
+
+	public Pawnshop getPawnshopId() {
+		return pawnshopId;
+	}
+
+	public void setPawnshopId(Pawnshop pawnshopId) {
+		this.pawnshopId = pawnshopId;
+	}
+	
+
+
+	
 
 }

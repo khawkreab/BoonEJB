@@ -1,12 +1,16 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import entity.Gold;
 @Entity
 public class Pawner implements Serializable {
 	
@@ -59,5 +63,15 @@ public class Pawner implements Serializable {
 		this.password = password;
 	}
 	
+	@OneToMany(mappedBy="pawnerId", cascade={CascadeType.ALL})
+	private List<Gold> gold;
+
+	public List<Gold> getGolde() {
+		return gold;
+	}
+
+	public void setGold(List<Gold> golde) {
+		this.gold = gold;
+	}
 	
 }
