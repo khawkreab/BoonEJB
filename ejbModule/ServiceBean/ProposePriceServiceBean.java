@@ -30,13 +30,13 @@ public class ProposePriceServiceBean implements ProposePriceService{
 	}
 
 	@Override
-	public ProposePrice findProposePrice(long proposePriceId) {
+	public ProposePrice findProposePriceById(long proposePriceId) {
 		return this.em.find(ProposePrice.class, proposePriceId);
 	}
 
 	@Override
 	public void delete(long proposePriceId) {
-		ProposePrice proposePrice = findProposePrice(proposePriceId);
+		ProposePrice proposePrice = findProposePriceById(proposePriceId);
 		if (proposePrice != null) {
 			em.remove(proposePrice);
 		}

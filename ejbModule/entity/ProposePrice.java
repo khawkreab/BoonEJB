@@ -24,18 +24,18 @@ public class ProposePrice implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
-	private long proposepriceId;
+	private long proposePriceId;
 
 	private int price;
 	private String status;
 	private Date proposeDate;
 
-	public long getProposepriceId() {
-		return proposepriceId;
+	public long getProposePriceId() {
+		return proposePriceId;
 	}
 
-	public void setProposepriceId(long proposepriceId) {
-		this.proposepriceId = proposepriceId;
+	public void setProposePriceId(long proposePriceId) {
+		this.proposePriceId = proposePriceId;
 	}
 
 	public int getPrice() {
