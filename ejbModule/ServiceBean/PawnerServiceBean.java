@@ -55,5 +55,11 @@ public class PawnerServiceBean implements PawnerService {
 		// TODO Auto-generated method stub
 		return this.em.createQuery("SELECT pm FROM Pawner pm WHERE pm.firstName LIKE :fn").setParameter("fn", name + "%").getResultList();
 	}
+	
+	@Override
+	public Pawner findPawnerUserName(String email, String password) {
+		return (Pawner) this.em.createQuery("SELECT p FROM Pawner p WHERE p.email =:un AND p.password =:pw").setParameter("un", email).setParameter("pw", password)
+				.getSingleResult();
+	}
 
 }
