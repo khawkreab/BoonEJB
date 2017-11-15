@@ -30,9 +30,9 @@ public class PawnshopServiceBean implements PawnshopService {
 	}
 
 	@Override
-	public void update(Pawnshop papawnshopwner) {
+	public void update(Pawnshop pawnshop) {
 		// TODO Auto-generated method stub
-		this.em.merge(getAllPawnshop());
+		this.em.merge(pawnshop);
 	}
 
 	@Override

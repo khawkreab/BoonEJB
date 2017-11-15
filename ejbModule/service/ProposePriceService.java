@@ -10,7 +10,7 @@ public interface ProposePriceService {
 
 	public void update(ProposePrice proposePrice);
 
-	public ProposePrice findProposePrice(long proposePriceId);
+	public ProposePrice findProposePriceById(long proposePriceId);
 
 	public void delete(long proposePriceId);
 
