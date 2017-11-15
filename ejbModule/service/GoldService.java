@@ -11,5 +11,7 @@ public interface GoldService {
 	public void delete(long goldId);
 	public List<Gold> getAllGold();
 	public List<Gold> findGoldName(String goldname);
+	public List<Gold> findGoldByPawnerId(long pawnerId);
+
 }
 

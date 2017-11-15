@@ -56,4 +56,10 @@ public class GoldServiceBean implements GoldService{
 		return this.em.createQuery("SELECT pm FROM Gold pm WHERE pm.goldname LIKE :fn").setParameter("fn", goldname + "%").getResultList();
 	}
 
+	@Override
+	public List<Gold> findGoldByPawnerId(long pawnerId) {
+		// TODO Auto-generated method stub
+		return this.em.createQuery("SELECT pm FROM Gold pm WHERE pm.pawnerId.pawnerId =:fn").setParameter("fn", pawnerId).getResultList();	
+	}
+
 }
