@@ -59,6 +59,6 @@ public class PawnshopServiceBean implements PawnshopService {
 	
 	@Override
 	public Pawnshop findPawnShopUserName(String email, String password) {
-		return (Pawnshop) em.createQuery("SELECT em FROM PawnShop em WHERE em.userName =:un AND em.password =:pw").setParameter("un", email).setParameter("pw", password).getSingleResult();
+		return (Pawnshop) em.createQuery("SELECT em FROM Pawnshop em WHERE em.email =:un AND em.password =:pw").setParameter("un", email).setParameter("pw", password).getSingleResult();
 	}
 }

@@ -17,7 +17,7 @@ public class Pawnshop implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long pawnshopId;
 
-	private String userName;
+	private String email;
 	private String password;
 	private String pawnshopName;
 	private String credential;
@@ -30,12 +30,12 @@ public class Pawnshop implements Serializable {
 		this.pawnshopId = pawnshopId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
