@@ -59,7 +59,7 @@ public class GoldServiceBean implements GoldService{
 	@Override
 	public List<Gold> findGoldByPawnerId(long pawnerId) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT pm FROM Gold pm WHERE pm.pawnerId.pawnerId =:fn").setParameter("fn", pawnerId).getResultList();	
+		return this.em.createQuery("SELECT p FROM Gold p WHERE p.pawnerId.pawnerId =:fn").setParameter("fn", pawnerId).getResultList();	
 	}
 
 }
