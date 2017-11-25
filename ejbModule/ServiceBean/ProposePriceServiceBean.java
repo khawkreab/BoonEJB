@@ -56,4 +56,11 @@ public class ProposePriceServiceBean implements ProposePriceService{
 	public ProposePrice findProposePriceId(long proposePriceId) {
 		return (ProposePrice) em.createQuery("SELECT p FROM ProposePrice p WHERE p.proposePriceId =:id").setParameter("id", proposePriceId).getSingleResult();
 	}
+
+	@Override
+	public List<ProposePrice> listProposeBygold(long goldId) {
+		// TODO Auto-generated method stub
+		return em.createQuery("SELECT p FROM ProposePrice p WHERE p.goldId.goldId =:id").setParameter("id", goldId).getResultList();
+
+	}
 }

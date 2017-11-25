@@ -19,4 +19,6 @@ public interface ProposePriceService {
 	public ProposePrice ListPostByPawnShopId(long pawnShopId);
 
 	public ProposePrice findProposePriceId(long proposePriceId);
+	
+	public List<ProposePrice> listProposeBygold(long goldId);
 }
