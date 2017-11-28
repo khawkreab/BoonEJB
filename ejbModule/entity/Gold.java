@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -25,7 +26,14 @@ public class Gold implements Serializable{
 	private String goldWeight;
 	private String goldPic;
 	private String goldDetail;
+	private Date date;
 	
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	public long getGoldId() {
 		return goldId;
 	}
