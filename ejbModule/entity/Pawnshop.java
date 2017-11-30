@@ -1,14 +1,14 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Pawnshop implements Serializable {
@@ -62,16 +62,20 @@ public class Pawnshop implements Serializable {
 		this.credential = credential;
 	}
 	
-	@OneToOne(mappedBy="pawnshopId", cascade={CascadeType.ALL})
-	private ProposePrice proposerice;
 
-	public ProposePrice getProposerice() {
+	
+	@OneToMany(mappedBy="pawnshopId", cascade={CascadeType.ALL})
+	private List<ProposePrice> proposerice;
+
+	public List<ProposePrice> getProposerice() {
 		return proposerice;
 	}
 
-	public void setProposerice(ProposePrice proposerice) {
+	public void setProposerice(List<ProposePrice> proposerice) {
 		this.proposerice = proposerice;
 	}
+
+	
 	
 
 }

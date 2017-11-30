@@ -7,8 +7,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-
-
+import entity.Gold;
 import entity.ProposePrice;
 import service.ProposePriceService;
 
@@ -48,8 +47,9 @@ public class ProposePriceServiceBean implements ProposePriceService{
 	}
 
 	@Override
-	public ProposePrice ListPostByPawnShopId(long postId) {
-		return (ProposePrice) em.createQuery("SELECT p FROM ProposePrice p WHERE p.proposePrice.postId =:id ").setParameter("id", postId).getSingleResult();
+	public List<ProposePrice> findProposeByPawnshopId(long pawnshopId) {
+		// TODO Auto-generated method stub
+		return this.em.createQuery("SELECT p FROM ProposePrice p WHERE p.pawnshopId.pawnshopId =:fn").setParameter("fn", pawnshopId).getResultList();	
 	}
 
 	@Override
