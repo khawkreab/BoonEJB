@@ -63,4 +63,10 @@ public class ProposePriceServiceBean implements ProposePriceService{
 		return em.createQuery("SELECT p FROM ProposePrice p WHERE p.goldId.goldId =:id").setParameter("id", goldId).getResultList();
 
 	}
+	
+	public void test(long postId, long pawnId){
+		System.out.println("UPDATE ProposePrice SET status = 'Approved' WHERE postId = :postId AND pawnId = :pawnId"); // Update Post Approved
+		System.out.println("UPDATE ProposePrice SET status = 'Reject' WHERE postId = :postId AND pawnId <> :pawnId"); // Update Post Reject
+		System.out.println("INSERT Approved"); // Update Post Reject
+	}
 }
