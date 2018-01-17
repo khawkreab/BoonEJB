@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import entity.Gold;
+
 @Entity
 public class Pawner implements Serializable {
 	
@@ -64,14 +64,14 @@ public class Pawner implements Serializable {
 	}
 	
 	@OneToMany(mappedBy="pawnerId", cascade={CascadeType.ALL})
-	private List<Gold> gold;
+	private List<Post> post;
 
-	public List<Gold> getGolde() {
-		return gold;
+	public List<Post> getPost() {
+		return post;
 	}
 
-	public void setGold(List<Gold> golde) {
-		this.gold = gold;
+	public void setGold(List<Post> post) {
+		this.post = post;
 	}
 	
 }

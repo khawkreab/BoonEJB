@@ -58,14 +58,14 @@ public class ProposePrice implements Serializable {
 	}
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-	private Gold goldId;
+	private Post postId;
 
-	public Gold getGoldId() {
-		return goldId;
+	public Post getPostId() {
+		return postId;
 	}
 
-	public void setGoldId(Gold goldId) {
-		this.goldId = goldId;
+	public void setPostId(Post postId) {
+		this.postId = postId;
 	}
 	
 	@ManyToOne(fetch=FetchType.EAGER)
