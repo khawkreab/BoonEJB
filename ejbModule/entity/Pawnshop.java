@@ -17,10 +17,13 @@ public class Pawnshop implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long pawnshopId;
 
-	private String email;
-	private String password;
+	private String pawnshopEmail;
+	private String pawnshopPassword;
 	private String pawnshopName;
-	private String credential;
+	private String pawnshopCredential;
+	private String pawnshopProvince;
+	private String pawnshopTel;
+	private String pawnshopAddress;
 
 	public long getPawnshopId() {
 		return pawnshopId;
@@ -30,20 +33,20 @@ public class Pawnshop implements Serializable {
 		this.pawnshopId = pawnshopId;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getPawnshopEmail() {
+		return pawnshopEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPawnshopEmail(String pawnshopEmail) {
+		this.pawnshopEmail = pawnshopEmail;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPawnshopPassword() {
+		return pawnshopPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPawnshopPassword(String pawnshopPassword) {
+		this.pawnshopPassword = pawnshopPassword;
 	}
 
 	public String getPawnshopName() {
@@ -54,28 +57,50 @@ public class Pawnshop implements Serializable {
 		this.pawnshopName = pawnshopName;
 	}
 
-	public String getCredential() {
-		return credential;
+	public String getPawnshopCredential() {
+		return pawnshopCredential;
 	}
 
-	public void setCredential(String credential) {
-		this.credential = credential;
+	public void setPawnshopCredential(String pawnshopCredential) {
+		this.pawnshopCredential = pawnshopCredential;
 	}
-	
 
-	
+	public String getPawnshopProvince() {
+		return pawnshopProvince;
+	}
+
+	public void setPawnshopProvince(String pawnshopProvince) {
+		this.pawnshopProvince = pawnshopProvince;
+	}
+
+	public String getPawnshopTel() {
+		return pawnshopTel;
+	}
+
+	public void setPawnshopTel(String pawnshopTel) {
+		this.pawnshopTel = pawnshopTel;
+	}
+
+	public String getPawnshopAddress() {
+		return pawnshopAddress;
+	}
+
+	public void setPawnshopAddress(String pawnshopAddress) {
+		this.pawnshopAddress = pawnshopAddress;
+	}
+
+
+
 	@OneToMany(mappedBy="pawnshopId", cascade={CascadeType.ALL})
-	private List<ProposePrice> proposerice;
+	private List<Estimate> estimates;
 
-	public List<ProposePrice> getProposerice() {
-		return proposerice;
+	public List<Estimate> getEstimates() {
+		return estimates;
 	}
 
-	public void setProposerice(List<ProposePrice> proposerice) {
-		this.proposerice = proposerice;
+	public void setEstimates(List<Estimate> estimates) {
+		this.estimates = estimates;
 	}
 
-	
-	
 
 }

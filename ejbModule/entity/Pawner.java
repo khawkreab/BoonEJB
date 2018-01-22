@@ -18,11 +18,15 @@ public class Pawner implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long pawnerId;
 	
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String password;
+	private String pawnerFirstname;
+	private String pawnerLastname;
+	private String pawnerEmail;
+	private String pawnerPassword;
+	private String pawnerProvince;
+	private String pawnerSex;
 	
+	
+
 	public long getPawnerId() {
 		return pawnerId;
 	}
@@ -31,47 +35,67 @@ public class Pawner implements Serializable {
 		this.pawnerId = pawnerId;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getPawnerFirstname() {
+		return pawnerFirstname;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setPawnerFirstname(String pawnerFirstname) {
+		this.pawnerFirstname = pawnerFirstname;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getPawnerLastname() {
+		return pawnerLastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setPawnerLastname(String pawnerLastname) {
+		this.pawnerLastname = pawnerLastname;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getPawnerEmail() {
+		return pawnerEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPawnerEmail(String pawnerEmail) {
+		this.pawnerEmail = pawnerEmail;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPawnerPassword() {
+		return pawnerPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPawnerPassword(String pawnerPassword) {
+		this.pawnerPassword = pawnerPassword;
 	}
-	
+
+	public String getPawnerProvince() {
+		return pawnerProvince;
+	}
+
+	public void setPawnerProvince(String pawnerProvince) {
+		this.pawnerProvince = pawnerProvince;
+	}
+
+	public String getPawnerSex() {
+		return pawnerSex;
+	}
+
+	public void setPawnerSex(String pawnerSex) {
+		this.pawnerSex = pawnerSex;
+	}
+
+
 	@OneToMany(mappedBy="pawnerId", cascade={CascadeType.ALL})
-	private List<Post> post;
+	private List<PawnerPost>pawnerPosts;
 
-	public List<Post> getPost() {
-		return post;
+
+
+	public List<PawnerPost> getPawnerPosts() {
+		return pawnerPosts;
 	}
 
-	public void setGold(List<Post> post) {
-		this.post = post;
+	public void setPawnerPosts(List<PawnerPost> pawnerPosts) {
+		this.pawnerPosts = pawnerPosts;
 	}
+
 	
 }

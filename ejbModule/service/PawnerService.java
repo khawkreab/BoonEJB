@@ -10,6 +10,6 @@ public interface PawnerService {
 	public void delete(long pawmerId);
 	public List<Pawner> getAllPawner();
 	public List<Pawner> findPawnerFirstName(String name);
-	public Pawner findPawnerUserName(String email, String password);
+	public Pawner findPawnerByEmailAndPassword(String email, String password);
 
 }

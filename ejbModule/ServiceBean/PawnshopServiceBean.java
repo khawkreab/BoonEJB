@@ -51,14 +51,15 @@ public class PawnshopServiceBean implements PawnshopService {
 	}
 
 	@Override
-	public List<Pawnshop> findPawnshopUserName(String name) {
+	public List<Pawnshop> findPawnshopName(String name) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT ps FROM Pawnshop ps WHERE ps.userName LIKE :un")
-				.setParameter("un", name + "%").getResultList();
+		return this.em.createQuery("SELECT c FROM Pawnshop c WHERE c.pawnshopName LIKE :name")
+				.setParameter("name", name + "%").getResultList();
 	}
 	
 	@Override
-	public Pawnshop findPawnShopUserName(String email, String password) {
-		return (Pawnshop) em.createQuery("SELECT em FROM Pawnshop em WHERE em.email =:un AND em.password =:pw").setParameter("un", email).setParameter("pw", password).getSingleResult();
+	public Pawnshop findPawnShopByEmailAndPassword(String email, String password) {
+		return (Pawnshop) em.createQuery("SELECT c FROM Pawnshop c WHERE c.pawnshopEmail =:email AND c.pawnshopPassword =:password").setParameter("email", email).setParameter("password", password).getSingleResult();
 	}
+
 }
