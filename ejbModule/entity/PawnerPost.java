@@ -179,7 +179,7 @@ public class PawnerPost implements Serializable{
 		this.pawnerId = pawnerId;
 	}
 	
-	@OneToMany(mappedBy="postId", cascade={CascadeType.ALL})
+	@OneToMany(mappedBy="pawnerPostId", cascade={CascadeType.ALL})
 	private List<Estimate> estimates;
 
 	public List<Estimate> getEstimates() {
