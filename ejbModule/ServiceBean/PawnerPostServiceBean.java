@@ -1,3 +1,9 @@
+/* 
+// page : PawnerPostServiceBean
+// version : 1.1
+// task : แก้ findPawnerPostByPawnshopId error 
+// edit by : khawkreab 
+ */
 package ServiceBean;
 
 import java.util.List;
@@ -65,7 +71,7 @@ public class PawnerPostServiceBean implements PawnerPostService{
 
 	@Override
 	public List<PawnerPost> findPawnerPostByPawnshopId(long pawnshopId) {
-		return this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerPostId NOT IN (SELECT c.pawnerPpostId.pawnerPostId FROM Estimate c WHERE c.pawnshopId.pawnshopId =:pawnshopId ) ORDER BY p.pawnerPostDate DESC").setParameter("pawnshopId", pawnshopId).getResultList();	
+		return this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerPostId NOT IN (SELECT c.pawnerPostId.pawnerPostId FROM Estimate c WHERE c.pawnshopId.pawnshopId =:pawnshopId ) ORDER BY p.pawnerPostDate DESC").setParameter("pawnshopId", pawnshopId).getResultList();	
 	}
 
 }
