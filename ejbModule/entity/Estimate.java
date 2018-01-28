@@ -1,3 +1,10 @@
+/*!-- 
+// page : Estimate
+// version : 1.0
+// task : estimatePriceMin estimatePriceMax
+// edit by : khawkreab
+ --*/
+
 package entity;
 
 import java.io.Serializable;
@@ -20,7 +27,8 @@ public class Estimate implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long estimateId;
 
-	private double estimatePrice;
+	private String estimatePriceMin;
+	private String estimatePriceMax;
 	private String estimateStatus;
 	private Date estimateDate;
 	private Date estimateAccessDate;
@@ -32,14 +40,6 @@ public class Estimate implements Serializable {
 
 	public void setEstimateId(long estimateId) {
 		this.estimateId = estimateId;
-	}
-
-	public double getEstimatePrice() {
-		return estimatePrice;
-	}
-
-	public void setEstimatePrice(double estimatePrice) {
-		this.estimatePrice = estimatePrice;
 	}
 
 	public String getEstimateStatus() {
@@ -76,6 +76,22 @@ public class Estimate implements Serializable {
 
 	public void setPawnerPostId(PawnerPost pawnerPostId) {
 		this.pawnerPostId = pawnerPostId;
+	}
+	
+	public String getEstimatePriceMin() {
+		return estimatePriceMin;
+	}
+
+	public void setEstimatePriceMin(String estimatePriceMin) {
+		this.estimatePriceMin = estimatePriceMin;
+	}
+
+	public String getEstimatePriceMax() {
+		return estimatePriceMax;
+	}
+
+	public void setEstimatePriceMax(String estimatePriceMax) {
+		this.estimatePriceMax = estimatePriceMax;
 	}
 
 	@ManyToOne(fetch=FetchType.EAGER)
