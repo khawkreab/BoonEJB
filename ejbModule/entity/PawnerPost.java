@@ -28,25 +28,20 @@ public class PawnerPost implements Serializable{
 	
 	private Date pawnerPostDate;
 	private String pawnerPostItemType;
-	private String pawnerPostType;
 	private String pawnerPostName;
 	private String pawnerPostDescription;
-	private String pawnerPostSize;
+	private String pawnerPostBrand;
+	private String pawnerPostPure ;
+	private String pawnerPostWeigh;
+	private String pawnerPostCategory;
+	private String pawnerPostProduction ;
 	private String pawnerPostModel;
 	private String pawnerPostSerial;
-	private String pawnerPostBrand;
-	private String pawnerPostYearPurchase;
-	private String pawnerPostAnsurranc;
+	private String pawnerPostCase;
+	private String pawnerPostBracelet;
 	private String pawnerPostDiamond;
-	private String pawnerPostRemote;
-	private String pawnerPostPure;
-	private String pawnerPostWeigh;
-	private String pawnerPostCondition;
-	private String pawnerPostSystem;
-	private String pawnerPostImg1;
-	private String pawnerPostImg2;
-		
-	
+	private String pawnerPostPackage;
+	private String pawnerPostWarranty;
 
 	public long getPawnerPostId() {
 		return pawnerPostId;
@@ -66,13 +61,6 @@ public class PawnerPost implements Serializable{
 	public void setPawnerPostItemType(String pawnerPostItemType) {
 		this.pawnerPostItemType = pawnerPostItemType;
 	}
-	
-	public String getPawnerPostType() {
-		return pawnerPostType;
-	}
-	public void setPawnerPostType(String pawnerPostType) {
-		this.pawnerPostType = pawnerPostType;
-	}
 	public String getPawnerPostName() {
 		return pawnerPostName;
 	}
@@ -85,53 +73,11 @@ public class PawnerPost implements Serializable{
 	public void setPawnerPostDescription(String pawnerPostDescription) {
 		this.pawnerPostDescription = pawnerPostDescription;
 	}
-	public String getPawnerPostSize() {
-		return pawnerPostSize;
-	}
-	public void setPawnerPostSize(String pawnerPostSize) {
-		this.pawnerPostSize = pawnerPostSize;
-	}
-	public String getPawnerPostModel() {
-		return pawnerPostModel;
-	}
-	public void setPawnerPostModel(String pawnerPostModel) {
-		this.pawnerPostModel = pawnerPostModel;
-	}
-	public String getPawnerPostSerial() {
-		return pawnerPostSerial;
-	}
-	public void setPawnerPostSerial(String pawnerPostSerial) {
-		this.pawnerPostSerial = pawnerPostSerial;
-	}
 	public String getPawnerPostBrand() {
 		return pawnerPostBrand;
 	}
 	public void setPawnerPostBrand(String pawnerPostBrand) {
 		this.pawnerPostBrand = pawnerPostBrand;
-	}
-	public String getPawnerPostYearPurchase() {
-		return pawnerPostYearPurchase;
-	}
-	public void setPawnerPostYearPurchase(String pawnerPostYearPurchase) {
-		this.pawnerPostYearPurchase = pawnerPostYearPurchase;
-	}
-	public String getPawnerPostAnsurranc() {
-		return pawnerPostAnsurranc;
-	}
-	public void setPawnerPostAnsurranc(String pawnerPostAnsurranc) {
-		this.pawnerPostAnsurranc = pawnerPostAnsurranc;
-	}
-	public String getPawnerPostDiamond() {
-		return pawnerPostDiamond;
-	}
-	public void setPawnerPostDiamond(String pawnerPostDiamond) {
-		this.pawnerPostDiamond = pawnerPostDiamond;
-	}
-	public String getPawnerPostRemote() {
-		return pawnerPostRemote;
-	}
-	public void setPawnerPostRemote(String pawnerPostRemote) {
-		this.pawnerPostRemote = pawnerPostRemote;
 	}
 	public String getPawnerPostPure() {
 		return pawnerPostPure;
@@ -145,29 +91,59 @@ public class PawnerPost implements Serializable{
 	public void setPawnerPostWeigh(String pawnerPostWeigh) {
 		this.pawnerPostWeigh = pawnerPostWeigh;
 	}
-	public String getPawnerPostCondition() {
-		return pawnerPostCondition;
+	public String getPawnerPostCategory() {
+		return pawnerPostCategory;
 	}
-	public void setPawnerPostCondition(String pawnerPostCondition) {
-		this.pawnerPostCondition = pawnerPostCondition;
+	public void setPawnerPostCategory(String pawnerPostCategory) {
+		this.pawnerPostCategory = pawnerPostCategory;
 	}
-	public String getPawnerPostSystem() {
-		return pawnerPostSystem;
+	public String getPawnerPostProduction() {
+		return pawnerPostProduction;
 	}
-	public void setPawnerPostSystem(String pawnerPostSystem) {
-		this.pawnerPostSystem = pawnerPostSystem;
+	public void setPawnerPostProduction(String pawnerPostProduction) {
+		this.pawnerPostProduction = pawnerPostProduction;
 	}
-	public String getPawnerPostImg1() {
-		return pawnerPostImg1;
+	public String getPawnerPostModel() {
+		return pawnerPostModel;
 	}
-	public void setPawnerPostImg1(String pawnerPostImg1) {
-		this.pawnerPostImg1 = pawnerPostImg1;
+	public void setPawnerPostModel(String pawnerPostModel) {
+		this.pawnerPostModel = pawnerPostModel;
 	}
-	public String getPawnerPostImg2() {
-		return pawnerPostImg2;
+	public String getPawnerPostSerial() {
+		return pawnerPostSerial;
 	}
-	public void setPawnerPostImg2(String pawnerPostImg2) {
-		this.pawnerPostImg2 = pawnerPostImg2;
+	public void setPawnerPostSerial(String pawnerPostSerial) {
+		this.pawnerPostSerial = pawnerPostSerial;
+	}
+	public String getPawnerPostCase() {
+		return pawnerPostCase;
+	}
+	public void setPawnerPostCase(String pawnerPostCase) {
+		this.pawnerPostCase = pawnerPostCase;
+	}
+	public String getPawnerPostBracelet() {
+		return pawnerPostBracelet;
+	}
+	public void setPawnerPostBracelet(String pawnerPostBracelet) {
+		this.pawnerPostBracelet = pawnerPostBracelet;
+	}
+	public String getPawnerPostDiamond() {
+		return pawnerPostDiamond;
+	}
+	public void setPawnerPostDiamond(String pawnerPostDiamond) {
+		this.pawnerPostDiamond = pawnerPostDiamond;
+	}
+	public String getPawnerPostPackage() {
+		return pawnerPostPackage;
+	}
+	public void setPawnerPostPackage(String pawnerPostPackage) {
+		this.pawnerPostPackage = pawnerPostPackage;
+	}
+	public String getPawnerPostWarranty() {
+		return pawnerPostWarranty;
+	}
+	public void setPawnerPostWarranty(String pawnerPostWarranty) {
+		this.pawnerPostWarranty = pawnerPostWarranty;
 	}
 
 
