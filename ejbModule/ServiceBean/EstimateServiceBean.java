@@ -1,3 +1,10 @@
+/*!-- 
+// page : EstimateServiceBean
+// version : 1.0
+// task : add find by pawnerId
+// edit by : khawkreab
+ --*/
+
 package ServiceBean;
 
 import java.util.List;
@@ -56,5 +63,12 @@ public class EstimateServiceBean implements EstimateService{
 	public List<Estimate> listEstimateByPawnerPost(long pawnerPostId) {
 		// TODO Auto-generated method stub
 		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnerPostId.pawnerPostId =:pawnerPostId").setParameter("pawnerPostId", pawnerPostId).getResultList();	
+	}
+
+	@Override
+	public List<Estimate> listEstimateByPawnerId(long pawnerId) {
+		// TODO Auto-generated method stub
+		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnerId.pawnerId =:pawnerId").setParameter("pawnerId", pawnerId).getResultList();	
+
 	}
 }
