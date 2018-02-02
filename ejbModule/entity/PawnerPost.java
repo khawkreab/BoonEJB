@@ -43,6 +43,78 @@ public class PawnerPost implements Serializable{
 	private String pawnerPostPackage;
 	private String pawnerPostWarranty;
 
+	private String pawnerPostSize;
+	private String panwePostRemote;
+	private String pawnerPostCapacity;
+	private String pawnerPostPurchase;
+	private String pawnerPostBattery;
+	private String pawnerPostTypeCamera;
+	private String pawnerPostCameraLen;
+	private String pawnerPostHarddisk;
+	private String pawnerPostRam;
+	private String pawnerPostDevice;
+
+
+	public String getPawnerPostSize() {
+		return pawnerPostSize;
+	}
+	public void setPawnerPostSize(String pawnerPostSize) {
+		this.pawnerPostSize = pawnerPostSize;
+	}
+	public String getPanwePostRemote() {
+		return panwePostRemote;
+	}
+	public void setPanwePostRemote(String panwePostRemote) {
+		this.panwePostRemote = panwePostRemote;
+	}
+	public String getPawnerPostCapacity() {
+		return pawnerPostCapacity;
+	}
+	public void setPawnerPostCapacity(String pawnerPostCapacity) {
+		this.pawnerPostCapacity = pawnerPostCapacity;
+	}
+	public String getPawnerPostPurchase() {
+		return pawnerPostPurchase;
+	}
+	public void setPawnerPostPurchase(String pawnerPostPurchase) {
+		this.pawnerPostPurchase = pawnerPostPurchase;
+	}
+	public String getPawnerPostBattery() {
+		return pawnerPostBattery;
+	}
+	public void setPawnerPostBattery(String pawnerPostBattery) {
+		this.pawnerPostBattery = pawnerPostBattery;
+	}
+	public String getPawnerPostTypeCamera() {
+		return pawnerPostTypeCamera;
+	}
+	public void setPawnerPostTypeCamera(String pawnerPostTypeCamera) {
+		this.pawnerPostTypeCamera = pawnerPostTypeCamera;
+	}
+	public String getPawnerPostCameraLen() {
+		return pawnerPostCameraLen;
+	}
+	public void setPawnerPostCameraLen(String pawnerPostCameraLen) {
+		this.pawnerPostCameraLen = pawnerPostCameraLen;
+	}
+	public String getPawnerPostHarddisk() {
+		return pawnerPostHarddisk;
+	}
+	public void setPawnerPostHarddisk(String pawnerPostHarddisk) {
+		this.pawnerPostHarddisk = pawnerPostHarddisk;
+	}
+	public String getPawnerPostRam() {
+		return pawnerPostRam;
+	}
+	public void setPawnerPostRam(String pawnerPostRam) {
+		this.pawnerPostRam = pawnerPostRam;
+	}
+	public String getPawnerPostDevice() {
+		return pawnerPostDevice;
+	}
+	public void setPawnerPostDevice(String pawnerPostDevice) {
+		this.pawnerPostDevice = pawnerPostDevice;
+	}
 	public long getPawnerPostId() {
 		return pawnerPostId;
 	}
