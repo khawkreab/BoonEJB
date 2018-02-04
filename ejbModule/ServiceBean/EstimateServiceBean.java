@@ -1,6 +1,6 @@
 /*!-- 
 // page : EstimateServiceBean
-// version : 1.0
+// version : 1.1
 // task : add find by pawnerId
 // edit by : khawkreab
  --*/
@@ -66,7 +66,7 @@ public class EstimateServiceBean implements EstimateService{
 	}
 
 	@Override
-	public List<Estimate> listEstimateByPawnerId(long pawnerId) {
+	public List<Estimate> findEstimateByPawnerId(long pawnerId) {
 		// TODO Auto-generated method stub
 		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnerId.pawnerId =:pawnerId").setParameter("pawnerId", pawnerId).getResultList();	
 
