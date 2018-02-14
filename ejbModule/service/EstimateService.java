@@ -1,7 +1,7 @@
 /*!-- 
 // page : EstimateService
-// version : 1.1
-// task : add find by pawnerId
+// version : 2.0
+// task : add updateStatus
 // edit by : khawkreab
  --*/
 
@@ -28,4 +28,7 @@ public interface EstimateService {
 	public List<Estimate> listEstimateByPawnerPost(long pawnerPostId);
 
 	public List<Estimate> findEstimateByPawnerId(long pawnerId);
+	
+
+	public void updateStatus(long pawnerPostId);
 }

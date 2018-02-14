@@ -1,7 +1,7 @@
 /*!-- 
 // page : EstimateServiceBean
-// version : 1.1
-// task : add find by pawnerId
+// version : 2.0
+// task : add updateStatus
 // edit by : khawkreab
  --*/
 
@@ -17,14 +17,13 @@ import javax.persistence.PersistenceContext;
 import entity.Estimate;
 import service.EstimateService;
 
-
 @Stateless
 @Remote(EstimateService.class)
-public class EstimateServiceBean implements EstimateService{
-	
+public class EstimateServiceBean implements EstimateService {
+
 	@PersistenceContext(unitName = "employeeDatabase")
 	EntityManager em;
-	
+
 	@Override
 	public void insert(Estimate estimate) {
 		this.em.persist(estimate);
@@ -56,19 +55,31 @@ public class EstimateServiceBean implements EstimateService{
 	@Override
 	public List<Estimate> findEstimateByPawnshopId(long pawnshopId) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnshopId.pawnshopId =:pawnshopId").setParameter("pawnshopId", pawnshopId).getResultList();	
+		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnshopId.pawnshopId =:pawnshopId")
+				.setParameter("pawnshopId", pawnshopId).getResultList();
 	}
 
 	@Override
 	public List<Estimate> listEstimateByPawnerPost(long pawnerPostId) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnerPostId.pawnerPostId =:pawnerPostId").setParameter("pawnerPostId", pawnerPostId).getResultList();	
+		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnerPostId.pawnerPostId =:pawnerPostId")
+				.setParameter("pawnerPostId", pawnerPostId).getResultList();
 	}
 
 	@Override
 	public List<Estimate> findEstimateByPawnerId(long pawnerId) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT p FROM Estimate p WHERE p.pawnerId.pawnerId =:pawnerId").setParameter("pawnerId", pawnerId).getResultList();	
+		return this.em.createQuery(
+				"SELECT c FROM Estimate c WHERE c.pawnerPostId.pawnerPostId IN (SELECT p.pawnerPostId FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId)")
+				.setParameter("pawnerId", pawnerId).getResultList();
 
+	}
+
+	@Override
+	public void updateStatus(long pawnerPostId) {
+		// TODO Auto-generated method stub
+		em.createQuery("update Estimate s set s.estimateStatus = 'disconnect' WHERE s.pawnerPostId.pawnerPostId =:pawnerPostId" 
+				).setParameter("pawnerPostId", pawnerPostId).executeUpdate();
+		
 	}
 }
