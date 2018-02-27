@@ -74,4 +74,11 @@ public class PawnerPostServiceBean implements PawnerPostService{
 		return this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerPostId NOT IN (SELECT c.pawnerPostId.pawnerPostId FROM Estimate c WHERE c.pawnshopId.pawnshopId =:pawnshopId ) ORDER BY p.pawnerPostDate DESC").setParameter("pawnshopId", pawnshopId).getResultList();	
 	}
 
+	@Override
+	public void updateStatus(long pawnerPostId, String staus) {
+		em.createQuery("update PawnerPost s set s.pawnerPostStatus =:staus WHERE s.pawnerPostId =:pawnerPostId" 
+				).setParameter("pawnerPostId", pawnerPostId).setParameter("staus", staus).executeUpdate();
+		
+	}
+
 }

@@ -76,10 +76,10 @@ public class EstimateServiceBean implements EstimateService {
 	}
 
 	@Override
-	public void updateStatus(long pawnerPostId) {
+	public void updateStatus(long pawnerPostId, String staus) {
 		// TODO Auto-generated method stub
-		em.createQuery("update Estimate s set s.estimateStatus = 'disconnect' WHERE s.pawnerPostId.pawnerPostId =:pawnerPostId" 
-				).setParameter("pawnerPostId", pawnerPostId).executeUpdate();
+		em.createQuery("update Estimate s set s.estimateStatus =:staus WHERE s.pawnerPostId.pawnerPostId =:pawnerPostId" 
+				).setParameter("pawnerPostId", pawnerPostId).setParameter("staus", staus).executeUpdate();
 		
 	}
 }

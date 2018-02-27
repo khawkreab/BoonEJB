@@ -53,6 +53,8 @@ public class PawnerPost implements Serializable{
 	private String pawnerPostHarddisk;
 	private String pawnerPostRam;
 	private String pawnerPostDevice;
+	
+	private String pawnerPostStatus;
 
 
 	public String getPawnerPostSize() {
@@ -216,6 +218,14 @@ public class PawnerPost implements Serializable{
 	}
 	public void setPawnerPostWarranty(String pawnerPostWarranty) {
 		this.pawnerPostWarranty = pawnerPostWarranty;
+	}
+
+
+	public String getPawnerPostStatus() {
+		return pawnerPostStatus;
+	}
+	public void setPawnerPostStatus(String pawnerPostStatus) {
+		this.pawnerPostStatus = pawnerPostStatus;
 	}
 
 
