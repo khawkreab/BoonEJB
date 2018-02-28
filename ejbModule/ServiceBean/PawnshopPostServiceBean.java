@@ -13,6 +13,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import entity.PawnerPost;
 import entity.PawnshopPost;
 import service.PawnshopPostService;
 
@@ -59,6 +60,10 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	@Override
+	public List<PawnshopPost> findPawnshopPostByPawnshopId(long pawnshopId) {
+		return this.em.createQuery("SELECT p FROM PawnshopPost p WHERE p.pawnshopPostId NOT IN (SELECT c.pawnshopPostId.pawnshopPostId FROM Estimate c WHERE c.pawnshopId.pawnshopId =:pawnshopId ) ORDER BY p.pawnerPostDate DESC").setParameter("pawnshopId", pawnshopId).getResultList();	
+	}
 
 }

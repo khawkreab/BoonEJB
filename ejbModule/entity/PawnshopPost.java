@@ -20,6 +20,7 @@ public class PawnshopPost implements Serializable{
 	private long pawnshopPostId;
 	
 	private Date pawnshopPostDate;
+	
 	private String pawnshopPostItemType;
 	private String pawnshopPostName;
 	private String pawnshopPostDescription;
@@ -47,16 +48,16 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostRam;
 	private String pawnshopPostDevice;
 	
-	private String pawnerPostStatus;
+	private String pawnshopPostStatus;
 	
-	private String pawnerPostPrice;
+	private String pawnshopPostPrice;
 
 	public long getPawnshopPostId() {
 		return pawnshopPostId;
 	}
 
 	public void setPawnshopPostId(long pawnshopPostId) {
-		pawnshopPostId = pawnshopPostId;
+		this.pawnshopPostId = pawnshopPostId;
 	}
 
 	public Date getPawnshopPostDate() {
@@ -267,37 +268,47 @@ public class PawnshopPost implements Serializable{
 		this.pawnshopPostDevice = pawnshopPostDevice;
 	}
 
-	public String getPawnerPostStatus() {
-		return pawnerPostStatus;
+	
+
+	public String getPawnshopPostStatus() {
+		return pawnshopPostStatus;
 	}
 
-	public void setPawnerPostStatus(String pawnerPostStatus) {
-		this.pawnerPostStatus = pawnerPostStatus;
+	public void setPawnshopPostStatus(String pawnshopPostStatus) {
+		this.pawnshopPostStatus = pawnshopPostStatus;
 	}
 
-	public String getPawnerPostPrice() {
-		return pawnerPostPrice;
+	public String getPawnshopPostPrice() {
+		return pawnshopPostPrice;
 	}
 
-	public void setPawnerPostPrice(String pawnerPostPrice) {
-		this.pawnerPostPrice = pawnerPostPrice;
+	public void setPawnshopPostPrice(String pawnshopPostPrice) {
+		this.pawnshopPostPrice = pawnshopPostPrice;
 	}
+
+
 
 	@ManyToOne(fetch=FetchType.EAGER)
-	private Pawner pawnshopId;
+	private Pawnshop pawnshopId;
 	
-	@OneToMany(mappedBy="pawnshopPostId", cascade={CascadeType.ALL})
-	private List<OrderItem> orderItems;
-
-	public Pawner getPawnshopId() {
+	public Pawnshop getPawnshop() {
 		return pawnshopId;
 	}
 
-	public void setPawnshopId(Pawner pawnshopId) {
+	public void setPawnshop(Pawnshop pawnshopId) {
 		this.pawnshopId = pawnshopId;
 	}
 
-	
+	@OneToMany(mappedBy="pawnshopPostId", cascade={CascadeType.ALL})
+	private List<OrderItem> orderItems;
+
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
+	}
 	
 
 }
