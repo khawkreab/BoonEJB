@@ -101,6 +101,17 @@ public class Pawnshop implements Serializable {
 	public void setEstimates(List<Estimate> estimates) {
 		this.estimates = estimates;
 	}
+	
+	@OneToMany(mappedBy="pawnshopId", cascade={CascadeType.ALL})
+	private List<PawnshopPost>pawnshopPosts;
+
+	public List<PawnshopPost> getPawnshopPosts() {
+		return pawnshopPosts;
+	}
+
+	public void setPawnshopPosts(List<PawnshopPost> pawnshopPosts) {
+		this.pawnshopPosts = pawnshopPosts;
+	}
 
 
 }

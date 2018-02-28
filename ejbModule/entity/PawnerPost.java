@@ -240,9 +240,6 @@ public class PawnerPost implements Serializable{
 	public void setPawner(Pawner pawnerId) {
 		this.pawnerId = pawnerId;
 	}
-	
-	
-	
 	public Pawner getPawnerId() {
 		return pawnerId;
 	}
