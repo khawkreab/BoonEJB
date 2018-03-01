@@ -15,12 +15,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import entity.OrderItem;
-import service.OrderService;
+import service.OrderItemService;
 
 
 @Stateless
-@Remote(OrderService.class)
-public class OrderServiceBean implements OrderService {
+@Remote(OrderItemService.class)
+public class OrderItemServiceBean implements OrderItemService {
 
 	@PersistenceContext(unitName = "employeeDatabase")
 	EntityManager em;

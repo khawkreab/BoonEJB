@@ -12,7 +12,7 @@ import java.util.List;
 import entity.OrderItem;
 
 
-public interface OrderService {
+public interface OrderItemService {
 
 	public void insert(OrderItem orderItem);
 
