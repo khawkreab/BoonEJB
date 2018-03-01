@@ -66,7 +66,7 @@ public class PawnerPostServiceBean implements PawnerPostService{
 	@Override
 	public List<PawnerPost> findPawnerPostByPawnerId(long pawnerId) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId").setParameter("pawnerId", pawnerId).getResultList();	
+		return this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId ORDER BY p.pawnerPostDate").setParameter("pawnerId", pawnerId).getResultList();	
 	}
 
 	@Override
