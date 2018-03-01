@@ -294,8 +294,13 @@ public class PawnshopPost implements Serializable{
 	public Pawnshop getPawnshop() {
 		return pawnshopId;
 	}
-
 	public void setPawnshop(Pawnshop pawnshopId) {
+		this.pawnshopId = pawnshopId;
+	}
+	public Pawnshop getPawnshopId() {
+		return pawnshopId;
+	}
+	public void setPawnshopId(Pawnshop pawnshopId) {
 		this.pawnshopId = pawnshopId;
 	}
 

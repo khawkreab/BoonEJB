@@ -103,7 +103,7 @@ public class Pawnshop implements Serializable {
 	}
 	
 	@OneToMany(mappedBy="pawnshopId", cascade={CascadeType.ALL})
-	private List<PawnshopPost>pawnshopPosts;
+	private List<PawnshopPost> pawnshopPosts;
 
 	public List<PawnshopPost> getPawnshopPosts() {
 		return pawnshopPosts;
