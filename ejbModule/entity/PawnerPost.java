@@ -1,7 +1,7 @@
 /*!-- 
 // page : PawnerPost
-// version : 1.0
-// task : change name 
+// version : 2.0
+// task : add picture
 // edit by : khawkreab
  --*/
 
@@ -55,6 +55,12 @@ public class PawnerPost implements Serializable{
 	private String pawnerPostDevice;
 	
 	private String pawnerPostStatus;
+	
+	private String pawnerPostPicture1;
+	private String pawnerPostPicture2;
+	private String pawnerPostPicture3;
+	private String pawnerPostPicture4;
+	private String pawnerPostPicture5;
 
 
 	public String getPawnerPostSize() {
@@ -226,6 +232,37 @@ public class PawnerPost implements Serializable{
 	}
 	public void setPawnerPostStatus(String pawnerPostStatus) {
 		this.pawnerPostStatus = pawnerPostStatus;
+	}
+
+	public String getPawnerPostPicture1() {
+		return pawnerPostPicture1;
+	}
+	public void setPawnerPostPicture1(String pawnerPostPicture1) {
+		this.pawnerPostPicture1 = pawnerPostPicture1;
+	}
+	public String getPawnerPostPicture2() {
+		return pawnerPostPicture2;
+	}
+	public void setPawnerPostPicture2(String pawnerPostPicture2) {
+		this.pawnerPostPicture2 = pawnerPostPicture2;
+	}
+	public String getPawnerPostPicture3() {
+		return pawnerPostPicture3;
+	}
+	public void setPawnerPostPicture3(String pawnerPostPicture3) {
+		this.pawnerPostPicture3 = pawnerPostPicture3;
+	}
+	public String getPawnerPostPicture4() {
+		return pawnerPostPicture4;
+	}
+	public void setPawnerPostPicture4(String pawnerPostPicture4) {
+		this.pawnerPostPicture4 = pawnerPostPicture4;
+	}
+	public String getPawnerPostPicture5() {
+		return pawnerPostPicture5;
+	}
+	public void setPawnerPostPicture5(String pawnerPostPicture5) {
+		this.pawnerPostPicture5 = pawnerPostPicture5;
 	}
 
 

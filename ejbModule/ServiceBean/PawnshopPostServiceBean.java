@@ -66,4 +66,9 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 		return this.em.createQuery("SELECT p FROM PawnshopPost p WHERE p.pawnshopId.pawnshopId =:pawnshopId ORDER BY p.pawnshopPostDate DESC").setParameter("pawnshopId", pawnshopId).getResultList();	
 	}
 
+	@Override
+	public List<PawnshopPost> listPawnshopPostByPawnerId(long pawnerId) {
+		return this.em.createQuery("SELECT p FROM PawnshopPost p WHERE p.pawnshopPostId NOT IN (SELECT c.pawnshopPostId.pawnshopPostId FROM OrderItem c WHERE c.pawnerId.pawnerId =:pawnerId ORDER by p.pawnshopPostDate DESC)").setParameter("pawnerId", pawnerId).getResultList();
+	}
+
 }
