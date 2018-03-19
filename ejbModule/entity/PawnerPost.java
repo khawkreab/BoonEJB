@@ -56,13 +56,6 @@ public class PawnerPost implements Serializable{
 	
 	private String pawnerPostStatus;
 	
-	private String pawnerPostPicture1;
-	private String pawnerPostPicture2;
-	private String pawnerPostPicture3;
-	private String pawnerPostPicture4;
-	private String pawnerPostPicture5;
-
-
 	public String getPawnerPostSize() {
 		return pawnerPostSize;
 	}
@@ -234,39 +227,6 @@ public class PawnerPost implements Serializable{
 		this.pawnerPostStatus = pawnerPostStatus;
 	}
 
-	public String getPawnerPostPicture1() {
-		return pawnerPostPicture1;
-	}
-	public void setPawnerPostPicture1(String pawnerPostPicture1) {
-		this.pawnerPostPicture1 = pawnerPostPicture1;
-	}
-	public String getPawnerPostPicture2() {
-		return pawnerPostPicture2;
-	}
-	public void setPawnerPostPicture2(String pawnerPostPicture2) {
-		this.pawnerPostPicture2 = pawnerPostPicture2;
-	}
-	public String getPawnerPostPicture3() {
-		return pawnerPostPicture3;
-	}
-	public void setPawnerPostPicture3(String pawnerPostPicture3) {
-		this.pawnerPostPicture3 = pawnerPostPicture3;
-	}
-	public String getPawnerPostPicture4() {
-		return pawnerPostPicture4;
-	}
-	public void setPawnerPostPicture4(String pawnerPostPicture4) {
-		this.pawnerPostPicture4 = pawnerPostPicture4;
-	}
-	public String getPawnerPostPicture5() {
-		return pawnerPostPicture5;
-	}
-	public void setPawnerPostPicture5(String pawnerPostPicture5) {
-		this.pawnerPostPicture5 = pawnerPostPicture5;
-	}
-
-
-
 
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Pawner pawnerId;
@@ -285,8 +245,6 @@ public class PawnerPost implements Serializable{
 	}
 
 
-
-
 	@OneToMany(mappedBy="pawnerPostId", cascade={CascadeType.ALL})
 	private List<Estimate> estimates;
 
@@ -295,6 +253,18 @@ public class PawnerPost implements Serializable{
 	}
 	public void setEstimates(List<Estimate> estimates) {
 		this.estimates = estimates;
+	}
+	
+	
+	@OneToMany(mappedBy="pawnerPostId", cascade={CascadeType.ALL})
+	private List<Picture> pawnerPostPictures;
+
+
+	public List<Picture> getPawnerPostPictures() {
+		return pawnerPostPictures;
+	}
+	public void setPawnerPostPictures(List<Picture> pawnerPostPictures) {
+		this.pawnerPostPictures = pawnerPostPictures;
 	}
 	
 }

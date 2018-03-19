@@ -6,9 +6,9 @@ import entity.PawnerPost;
 
 
 public interface PawnerPostService {
-	public void insert(PawnerPost pawnerPostId);
+	public PawnerPost insert(PawnerPost pawnerPost);
 	public PawnerPost findPostById(long pawnerPostId);
-	public void update(PawnerPost pawnerPostId);
+	public void update(PawnerPost pawnerPost);
 	public void delete(long pawnerPostId);
 	public List<PawnerPost> getAllPawnerPost();
 	public List<PawnerPost> findPawnerPostName(String postName);
@@ -16,6 +16,6 @@ public interface PawnerPostService {
 	public List<PawnerPost> findPawnerPostByPawnshopId(long pawnshopId);
 	
 	public void updateStatus(long pawnerPostId, String staus);
-
+	public PawnerPost findPawnerPostByStatus(String status);
 }
 

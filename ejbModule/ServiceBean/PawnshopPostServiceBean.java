@@ -25,8 +25,10 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 	EntityManager em;
 
 	@Override
-	public void insert(PawnshopPost pawnshopPost) {
+	public PawnshopPost insert(PawnshopPost pawnshopPost) {
 		this.em.persist(pawnshopPost);
+		em.flush();
+		return pawnshopPost;
 		
 	}
 

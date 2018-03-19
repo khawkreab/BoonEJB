@@ -13,6 +13,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import entity.Pawner;
 import entity.PawnerPost;
 import service.PawnerPostService;
 
@@ -24,27 +25,25 @@ public class PawnerPostServiceBean implements PawnerPostService{
 	EntityManager em;
 
 	@Override
-	public void insert(PawnerPost pawnerPostId) {
-		// TODO Auto-generated method stub
-		this.em.persist(pawnerPostId);
+	public PawnerPost insert(PawnerPost pawnerPost) {
+		this.em.persist(pawnerPost);
+		em.flush();
+		return pawnerPost;
 	}
 
 	@Override
 	public PawnerPost findPostById(long pawnerPostId) {
-		// TODO Auto-generated method stub
 		return this.em.find(PawnerPost.class, pawnerPostId);
 	}
 
 
 	@Override
-	public void update(PawnerPost pawnerPostId) {
-		// TODO Auto-generated method stub
-		this.em.merge(pawnerPostId);
+	public void update(PawnerPost pawnerPost) {
+		this.em.merge(pawnerPost);
 	}
 
 	@Override
 	public void delete(long postId) {
-		// TODO Auto-generated method stub
 		PawnerPost pm = findPostById(postId);
 		if(pm != null){
 			this.em.remove(pm);
@@ -53,19 +52,16 @@ public class PawnerPostServiceBean implements PawnerPostService{
 
 	@Override
 	public List<PawnerPost> getAllPawnerPost() {
-		// TODO Auto-generated method stub
 		return this.em.createQuery("SELECT c FROM PawnerPost c").getResultList();
 	}
 
 	@Override
 	public List<PawnerPost> findPawnerPostName(String postName) {
-		// TODO Auto-generated method stub
 		return this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerPostItemType LIKE :postName").setParameter("postName", postName + "%").getResultList();
 	}
 
 	@Override
 	public List<PawnerPost> findPawnerPostByPawnerId(long pawnerId) {
-		// TODO Auto-generated method stub
 		return this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId ORDER BY p.pawnerPostDate DESC").setParameter("pawnerId", pawnerId).getResultList();	
 	}
 
@@ -79,6 +75,11 @@ public class PawnerPostServiceBean implements PawnerPostService{
 		em.createQuery("update PawnerPost s set s.pawnerPostStatus =:staus WHERE s.pawnerPostId =:pawnerPostId" 
 				).setParameter("pawnerPostId", pawnerPostId).setParameter("staus", staus).executeUpdate();
 		
+	}
+
+	@Override
+	public PawnerPost findPawnerPostByStatus(String status) {
+		return (PawnerPost) this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerPostStatus =:status").setParameter("status", status).getSingleResult();
 	}
 
 }

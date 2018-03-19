@@ -286,8 +286,6 @@ public class PawnshopPost implements Serializable{
 		this.pawnshopPostPrice = pawnshopPostPrice;
 	}
 
-
-
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Pawnshop pawnshopId;
 	
@@ -315,5 +313,15 @@ public class PawnshopPost implements Serializable{
 		this.orderItems = orderItems;
 	}
 	
+	@OneToMany(mappedBy="pawnshopPostId", cascade={CascadeType.ALL})
+	private List<Picture> pictures;
+
+	public List<Picture> getPictures() {
+		return pictures;
+	}
+
+	public void setPictures(List<Picture> pictures) {
+		this.pictures = pictures;
+	}
 
 }
