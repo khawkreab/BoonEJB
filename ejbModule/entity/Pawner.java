@@ -23,9 +23,6 @@ public class Pawner implements Serializable {
 	private String pawnerEmail;
 	private String pawnerPassword;
 	private String pawnerProvince;
-	private String pawnerSex;
-	
-	
 
 	public long getPawnerId() {
 		return pawnerId;
@@ -73,14 +70,6 @@ public class Pawner implements Serializable {
 
 	public void setPawnerProvince(String pawnerProvince) {
 		this.pawnerProvince = pawnerProvince;
-	}
-
-	public String getPawnerSex() {
-		return pawnerSex;
-	}
-
-	public void setPawnerSex(String pawnerSex) {
-		this.pawnerSex = pawnerSex;
 	}
 
 
