@@ -56,6 +56,8 @@ public class PawnerPost implements Serializable{
 	
 	private String pawnerPostStatus;
 	
+	private String pawnerPostPicture;
+	
 	public String getPawnerPostSize() {
 		return pawnerPostSize;
 	}
@@ -219,7 +221,12 @@ public class PawnerPost implements Serializable{
 		this.pawnerPostWarranty = pawnerPostWarranty;
 	}
 
-
+	public String getPawnerPostPicture() {
+		return pawnerPostPicture;
+	}
+	public void setPawnerPostPicture(String pawnerPostPicture) {
+		this.pawnerPostPicture = pawnerPostPicture;
+	}
 	public String getPawnerPostStatus() {
 		return pawnerPostStatus;
 	}

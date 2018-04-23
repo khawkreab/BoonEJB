@@ -13,6 +13,8 @@ public interface PawnshopPostService {
 	public List<PawnshopPost> findPawnshopPost(String name);
 	public List<PawnshopPost> findPawnshopPostByPawnshopId(long pawnshopId);
 	public List<PawnshopPost> listPawnshopPostByPawnerId(long pawnerId);
+	
+	public void updatePicture(long pawnshopPostId, String picture);
 
 
 }

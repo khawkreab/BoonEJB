@@ -51,6 +51,8 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostStatus;
 	
 	private String pawnshopPostPrice;
+	
+	private String pawnshopPostPicture;
 
 	public long getPawnshopPostId() {
 		return pawnshopPostId;
@@ -268,8 +270,6 @@ public class PawnshopPost implements Serializable{
 		this.pawnshopPostDevice = pawnshopPostDevice;
 	}
 
-	
-
 	public String getPawnshopPostStatus() {
 		return pawnshopPostStatus;
 	}
@@ -285,6 +285,16 @@ public class PawnshopPost implements Serializable{
 	public void setPawnshopPostPrice(String pawnshopPostPrice) {
 		this.pawnshopPostPrice = pawnshopPostPrice;
 	}
+
+	public String getPawnshopPostPicture() {
+		return pawnshopPostPicture;
+	}
+
+	public void setPawnshopPostPicture(String pawnshopPostPicture) {
+		this.pawnshopPostPicture = pawnshopPostPicture;
+	}
+
+
 
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Pawnshop pawnshopId;

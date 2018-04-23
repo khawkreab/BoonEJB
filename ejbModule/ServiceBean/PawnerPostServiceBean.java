@@ -82,4 +82,10 @@ public class PawnerPostServiceBean implements PawnerPostService{
 		return (PawnerPost) this.em.createQuery("SELECT p FROM PawnerPost p WHERE p.pawnerPostStatus =:status").setParameter("status", status).getSingleResult();
 	}
 
+	@Override
+	public void updatePicture(long pawnerPostId, String picture) {
+		em.createQuery("update PawnerPost s set s.pawnerPostPicture =:picture WHERE s.pawnerPostId =:pawnerPostId" 
+				).setParameter("pawnerPostId", pawnerPostId).setParameter("picture", picture).executeUpdate();
+	}
+
 }

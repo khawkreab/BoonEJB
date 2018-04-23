@@ -17,5 +17,7 @@ public interface PawnerPostService {
 	
 	public void updateStatus(long pawnerPostId, String staus);
 	public PawnerPost findPawnerPostByStatus(String status);
-}
+	
+	public void updatePicture(long pawnerPostId, String picture);
+	}
 

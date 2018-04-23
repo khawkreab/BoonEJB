@@ -7,7 +7,7 @@ import entity.Picture;
 
 public interface PictureService {
 	public void insert(Picture picture);
-	public Picture findPawnerPostPictureById(long pictureId);
+	public Picture findPictureById(long pictureId);
 	public void update(Picture picture);
 	public void delete(long pictureId);
 	public List<Picture> getAllPicture();
@@ -15,5 +15,6 @@ public interface PictureService {
 	public List<Picture> findPictureByPawnerId(long pawnerId);
 	public List<Picture> findPictureByPawnshopId(long pawnshopId);
 	public List<Picture> findPictureByPawnshopPostId(long pawnshopPostId);
+	
 }
 
