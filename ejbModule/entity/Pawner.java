@@ -93,6 +93,9 @@ public class Pawner implements Serializable {
 	public void setOrders(List<OrderItem> orders) {
 		this.orders = orders;
 	}
+	
+	@OneToMany(mappedBy="pawnerId", cascade={CascadeType.ALL})
+	private List<Picture>pawnerPostPictures;
 
 	
 }

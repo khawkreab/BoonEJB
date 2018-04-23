@@ -25,8 +25,10 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 	EntityManager em;
 
 	@Override
-	public void insert(PawnshopPost pawnshopPost) {
+	public PawnshopPost insert(PawnshopPost pawnshopPost) {
 		this.em.persist(pawnshopPost);
+		em.flush();
+		return pawnshopPost;
 		
 	}
 
@@ -64,6 +66,18 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 	@Override
 	public List<PawnshopPost> findPawnshopPostByPawnshopId(long pawnshopId) {
 		return this.em.createQuery("SELECT p FROM PawnshopPost p WHERE p.pawnshopId.pawnshopId =:pawnshopId ORDER BY p.pawnshopPostDate DESC").setParameter("pawnshopId", pawnshopId).getResultList();	
+	}
+
+	@Override
+	public List<PawnshopPost> listPawnshopPostByPawnerId(long pawnerId) {
+		return this.em.createQuery("SELECT p FROM PawnshopPost p WHERE p.pawnshopPostId NOT IN (SELECT c.pawnshopPostId.pawnshopPostId FROM OrderItem c WHERE c.pawnerId.pawnerId =:pawnerId) ORDER BY p.pawnshopPostDate DESC").setParameter("pawnerId", pawnerId).getResultList();
+	}
+
+	@Override
+	public void updatePicture(long pawnshopPostId, String picture) {
+		em.createQuery("update PawnshopPost s set s.pawnshopPostPicture =:picture WHERE s.pawnshopPostId =:pawnshopPostId" 
+				).setParameter("pawnshopPostId", pawnshopPostId).setParameter("picture", picture).executeUpdate();
+		
 	}
 
 }

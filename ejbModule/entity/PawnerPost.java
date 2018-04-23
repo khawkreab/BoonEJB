@@ -1,7 +1,7 @@
 /*!-- 
 // page : PawnerPost
-// version : 1.0
-// task : change name 
+// version : 2.0
+// task : add picture
 // edit by : khawkreab
  --*/
 
@@ -55,8 +55,9 @@ public class PawnerPost implements Serializable{
 	private String pawnerPostDevice;
 	
 	private String pawnerPostStatus;
-
-
+	
+	private String pawnerPostPicture;
+	
 	public String getPawnerPostSize() {
 		return pawnerPostSize;
 	}
@@ -220,15 +221,18 @@ public class PawnerPost implements Serializable{
 		this.pawnerPostWarranty = pawnerPostWarranty;
 	}
 
-
+	public String getPawnerPostPicture() {
+		return pawnerPostPicture;
+	}
+	public void setPawnerPostPicture(String pawnerPostPicture) {
+		this.pawnerPostPicture = pawnerPostPicture;
+	}
 	public String getPawnerPostStatus() {
 		return pawnerPostStatus;
 	}
 	public void setPawnerPostStatus(String pawnerPostStatus) {
 		this.pawnerPostStatus = pawnerPostStatus;
 	}
-
-
 
 
 	@ManyToOne(fetch=FetchType.EAGER)
@@ -248,8 +252,6 @@ public class PawnerPost implements Serializable{
 	}
 
 
-
-
 	@OneToMany(mappedBy="pawnerPostId", cascade={CascadeType.ALL})
 	private List<Estimate> estimates;
 
@@ -258,6 +260,18 @@ public class PawnerPost implements Serializable{
 	}
 	public void setEstimates(List<Estimate> estimates) {
 		this.estimates = estimates;
+	}
+	
+	
+	@OneToMany(mappedBy="pawnerPostId", cascade={CascadeType.ALL})
+	private List<Picture> pawnerPostPictures;
+
+
+	public List<Picture> getPawnerPostPictures() {
+		return pawnerPostPictures;
+	}
+	public void setPawnerPostPictures(List<Picture> pawnerPostPictures) {
+		this.pawnerPostPictures = pawnerPostPictures;
 	}
 	
 }

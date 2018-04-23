@@ -51,6 +51,8 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostStatus;
 	
 	private String pawnshopPostPrice;
+	
+	private String pawnshopPostPicture;
 
 	public long getPawnshopPostId() {
 		return pawnshopPostId;
@@ -268,8 +270,6 @@ public class PawnshopPost implements Serializable{
 		this.pawnshopPostDevice = pawnshopPostDevice;
 	}
 
-	
-
 	public String getPawnshopPostStatus() {
 		return pawnshopPostStatus;
 	}
@@ -284,6 +284,14 @@ public class PawnshopPost implements Serializable{
 
 	public void setPawnshopPostPrice(String pawnshopPostPrice) {
 		this.pawnshopPostPrice = pawnshopPostPrice;
+	}
+
+	public String getPawnshopPostPicture() {
+		return pawnshopPostPicture;
+	}
+
+	public void setPawnshopPostPicture(String pawnshopPostPicture) {
+		this.pawnshopPostPicture = pawnshopPostPicture;
 	}
 
 
@@ -315,5 +323,15 @@ public class PawnshopPost implements Serializable{
 		this.orderItems = orderItems;
 	}
 	
+	@OneToMany(mappedBy="pawnshopPostId", cascade={CascadeType.ALL})
+	private List<Picture> pictures;
+
+	public List<Picture> getPictures() {
+		return pictures;
+	}
+
+	public void setPictures(List<Picture> pictures) {
+		this.pictures = pictures;
+	}
 
 }

@@ -1,7 +1,7 @@
 /*!-- 
 // page : OrderServiceBean
-// version : 1.0
-// task : create
+// version : 2.0
+// task : findOrderByPawnerId
 // edit by : khawkreab
  --*/
 
@@ -54,6 +54,11 @@ public class OrderItemServiceBean implements OrderItemService {
 	@Override
 	public List<OrderItem> getAllorderItem() {
 		return this.em.createQuery("SELECT c FROM OrderItem c").getResultList();
+	}
+
+	@Override
+	public List<OrderItem> findOrderByPawnerId(long pawnerId) {
+		return this.em.createQuery("SELECT c FROM OrderItem c where c.pawnerId.pawnerId =:pawnerId ORDER BY c.orderItemDateIn DESC").setParameter("pawnerId", pawnerId).getResultList();
 	}
 
 

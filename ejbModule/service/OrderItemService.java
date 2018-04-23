@@ -1,7 +1,7 @@
 /*!-- 
 // page : OrderService
-// version : 1.0
-// task : create
+// version : 2.0
+// task : findOrderByPawnerId
 // edit by : khawkreab
  --*/
 
@@ -23,5 +23,7 @@ public interface OrderItemService {
 	public void delete(long orderItemId);
 
 	public List<OrderItem> getAllorderItem();
+	
+	public List<OrderItem> findOrderByPawnerId(long pawnerId);
 
 }
