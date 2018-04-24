@@ -25,7 +25,7 @@ public class Pawnshop implements Serializable {
 	private String pawnshopTel;
 	private String pawnshopDistrict;
 	private String pawnshopParish;
-	private String pawnshopPostcod;
+	private String pawnshopPostcodes;
 
 	public long getPawnshopId() {
 		return pawnshopId;
@@ -99,13 +99,14 @@ public class Pawnshop implements Serializable {
 		this.pawnshopParish = pawnshopParish;
 	}
 
-	public String getPawnshopPostcod() {
-		return pawnshopPostcod;
+	public String getPawnshopPostcodes() {
+		return pawnshopPostcodes;
 	}
 
-	public void setPawnshopPostcod(String pawnshopPostcod) {
-		this.pawnshopPostcod = pawnshopPostcod;
+	public void setPawnshopPostcodes(String pawnshopPostcodes) {
+		this.pawnshopPostcodes = pawnshopPostcodes;
 	}
+
 
 
 
