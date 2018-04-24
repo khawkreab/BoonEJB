@@ -13,6 +13,7 @@ public interface PawnerPostService {
 	public List<PawnerPost> getAllPawnerPost();
 	public List<PawnerPost> findPawnerPostName(String postName);
 	public List<PawnerPost> findPawnerPostByPawnerId(long pawnerId);
+	public List<PawnerPost> findPawnerPostByPawnerIdAndStatus(long pawnerId , String status);
 	public List<PawnerPost> findPawnerPostByPawnshopId(long pawnshopId);
 	
 	public void updateStatus(long pawnerPostId, String staus);
