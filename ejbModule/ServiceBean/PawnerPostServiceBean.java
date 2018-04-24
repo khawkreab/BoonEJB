@@ -88,4 +88,12 @@ public class PawnerPostServiceBean implements PawnerPostService{
 				).setParameter("pawnerPostId", pawnerPostId).setParameter("picture", picture).executeUpdate();
 	}
 
+	@Override
+	public List<PawnerPost> findPawnerPostByPawnerIdAndStatus(long pawnerId, String status) {
+		// TODO Auto-generated method stub
+		return this.em.createQuery(
+				"SELECT p FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId AND p.pawnerPostStatus =:status ORDER BY p.pawnerPostDate DESC")
+				.setParameter("pawnerId", pawnerId).setParameter("status", status).getResultList();
+	}
+
 }
