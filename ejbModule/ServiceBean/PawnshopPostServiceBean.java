@@ -19,7 +19,7 @@ import service.PawnshopPostService;
 
 @Stateless
 @Remote(PawnshopPostService.class)
-public class PawnshopPostServiceBean implements PawnshopPostService{
+public class PawnshopPostServiceBean implements PawnshopPostService {
 
 	@PersistenceContext(unitName = "employeeDatabase")
 	EntityManager em;
@@ -29,7 +29,7 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 		this.em.persist(pawnshopPost);
 		em.flush();
 		return pawnshopPost;
-		
+
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 	@Override
 	public void update(PawnshopPost pawnshopPost) {
 		this.em.merge(pawnshopPost);
-		
+
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 		if (pawnshopPost != null) {
 			em.remove(pawnshopPost);
 		}
-		
+
 	}
 
 	@Override
@@ -62,22 +62,35 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	@Override
 	public List<PawnshopPost> findPawnshopPostByPawnshopId(long pawnshopId) {
-		return this.em.createQuery("SELECT p FROM PawnshopPost p WHERE p.pawnshopId.pawnshopId =:pawnshopId ORDER BY p.pawnshopPostDate DESC").setParameter("pawnshopId", pawnshopId).getResultList();	
+		return this.em.createQuery(
+				"SELECT p FROM PawnshopPost p WHERE p.pawnshopId.pawnshopId =:pawnshopId ORDER BY p.pawnshopPostDate DESC")
+				.setParameter("pawnshopId", pawnshopId).getResultList();
 	}
 
 	@Override
 	public List<PawnshopPost> listPawnshopPostByPawnerId(long pawnerId) {
-		return this.em.createQuery("SELECT p FROM PawnshopPost p WHERE p.pawnshopPostId NOT IN (SELECT c.pawnshopPostId.pawnshopPostId FROM OrderItem c WHERE c.pawnerId.pawnerId =:pawnerId) ORDER BY p.pawnshopPostDate DESC").setParameter("pawnerId", pawnerId).getResultList();
+		return this.em.createQuery(
+				"SELECT p FROM PawnshopPost p WHERE p.pawnshopPostId NOT IN (SELECT c.pawnshopPostId.pawnshopPostId FROM OrderItem c WHERE c.pawnerId.pawnerId =:pawnerId) ORDER BY p.pawnshopPostDate DESC")
+				.setParameter("pawnerId", pawnerId).getResultList();
 	}
 
 	@Override
 	public void updatePicture(long pawnshopPostId, String picture) {
-		em.createQuery("update PawnshopPost s set s.pawnshopPostPicture =:picture WHERE s.pawnshopPostId =:pawnshopPostId" 
-				).setParameter("pawnshopPostId", pawnshopPostId).setParameter("picture", picture).executeUpdate();
-		
+		em.createQuery(
+				"update PawnshopPost s set s.pawnshopPostPicture =:picture WHERE s.pawnshopPostId =:pawnshopPostId")
+				.setParameter("pawnshopPostId", pawnshopPostId).setParameter("picture", picture).executeUpdate();
+
+	}
+
+	@Override
+	public void updateStatus(long pawnshopPostId, String staus) {
+		em.createQuery(
+				"update PawnshopPost s set s.pawnshopPostStatus =:staus WHERE s.pawnshopPostId =:pawnshopPostId")
+				.setParameter("pawnshopPostId", pawnshopPostId).setParameter("staus", staus).executeUpdate();
+
 	}
 
 }

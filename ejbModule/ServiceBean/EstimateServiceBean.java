@@ -49,7 +49,7 @@ public class EstimateServiceBean implements EstimateService {
 
 	@Override
 	public List<Estimate> getAllEstimate() {
-		return em.createQuery("SELECT x FROM Estimate x").getResultList();
+		return em.createQuery("SELECT c FROM Estimate c").getResultList();
 	}
 
 	@Override

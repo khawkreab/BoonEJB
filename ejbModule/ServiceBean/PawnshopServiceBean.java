@@ -47,7 +47,7 @@ public class PawnshopServiceBean implements PawnshopService {
 	@Override
 	public List<Pawnshop> getAllPawnshop() {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT x FROM Pawnshop x").getResultList();
+		return this.em.createQuery("SELECT c FROM Pawnshop c").getResultList();
 	}
 
 	@Override
