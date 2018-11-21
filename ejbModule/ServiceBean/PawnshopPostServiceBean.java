@@ -80,4 +80,10 @@ public class PawnshopPostServiceBean implements PawnshopPostService{
 		
 	}
 
+	@Override
+	public void updateStatus(long id, String status) {
+		em.createQuery("update PawnshopPost s set s.pawnshopPostStatus =:pawnshopPostStatus WHERE s.pawnshopPostId =:pawnshopPostId" 
+				).setParameter("pawnshopPostId", id).setParameter("pawnshopPostStatus", status).executeUpdate();
+	}
+
 }

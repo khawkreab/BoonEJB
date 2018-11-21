@@ -11,5 +11,6 @@ public interface PawnerService {
 	public List<Pawner> getAllPawner();
 	public List<Pawner> findPawnerFirstName(String name);
 	public Pawner findPawnerByEmailAndPassword(String email, String password);
-
+	
+	public void updatePawnerState(long pawnerId,String pawnerState);
 }

@@ -14,4 +14,5 @@ public interface PawnshopService {
 	public List<Pawnshop> findPawnshopName(String name);
 	public Pawnshop findPawnShopByEmailAndPassword(String email, String password);
 
+	public void updatePawnshopState(long pawnshopId,String pawnshopState);
 }

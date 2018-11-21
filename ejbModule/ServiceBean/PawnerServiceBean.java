@@ -61,5 +61,10 @@ public class PawnerServiceBean implements PawnerService {
 		return (Pawner) this.em.createQuery("SELECT p FROM Pawner p WHERE p.pawnerEmail =:email AND p.pawnerPassword =:password").setParameter("email", email).setParameter("password", password)
 				.getSingleResult();
 	}
+	@Override
+	public void updatePawnerState(long pawnerId,String pawnerState) {
+		em.createQuery("update Pawner s set s.pawnerState =:pawnerState WHERE s.pawnerId =:pawnerId" 
+				).setParameter("pawnerId", pawnerId).setParameter("pawnerState", pawnerState).executeUpdate();
+	}
 
 }

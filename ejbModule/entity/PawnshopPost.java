@@ -53,6 +53,18 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostPrice;
 	
 	private String pawnshopPostPicture;
+	
+	//add new filed
+	private String pawnshopName;
+	
+
+	public String getPawnshopName() {
+		return pawnshopName;
+	}
+
+	public void setPawnshopName(String pawnshopName) {
+		this.pawnshopName = pawnshopName;
+	}
 
 	public long getPawnshopPostId() {
 		return pawnshopPostId;

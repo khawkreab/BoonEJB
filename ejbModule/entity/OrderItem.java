@@ -24,6 +24,30 @@ public class OrderItem implements Serializable {
 	private Date orderItemDateIn;
 	private Date orderItemDateOut;
 	private Date orderItemDatePurchase;
+	
+	//add new filed
+	private String pawnshopName;
+	private String pawnshopPostPicture;
+	
+	private String orderNumber;
+	
+	
+	
+	public String getPawnshopName() {
+		return pawnshopName;
+	}
+
+	public void setPawnshopName(String pawnshopName) {
+		this.pawnshopName = pawnshopName;
+	}
+
+	public String getPawnshopPostPicture() {
+		return pawnshopPostPicture;
+	}
+
+	public void setPawnshopPostPicture(String pawnshopPostPicture) {
+		this.pawnshopPostPicture = pawnshopPostPicture;
+	}
 
 	public long getOrderItemId() {
 		return orderItemId;

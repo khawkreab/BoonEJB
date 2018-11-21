@@ -14,6 +14,7 @@ public interface PawnshopPostService {
 	public List<PawnshopPost> findPawnshopPostByPawnshopId(long pawnshopId);
 	public List<PawnshopPost> listPawnshopPostByPawnerId(long pawnerId);
 	
+	public void updateStatus(long id, String status);
 	public void updatePicture(long pawnshopPostId, String picture);
 
 

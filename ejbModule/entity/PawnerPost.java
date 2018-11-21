@@ -19,11 +19,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
+@SequenceGenerator(name="seq", initialValue=0, allocationSize=50)
 public class PawnerPost implements Serializable{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
 	private long pawnerPostId;
 	
 	private Date pawnerPostDate;

@@ -26,6 +26,7 @@ public class Pawnshop implements Serializable {
 	private String pawnshopDistrict;
 	private String pawnshopParish;
 	private String pawnshopPostcodes;
+	private String pawnshopState;
 
 	public long getPawnshopId() {
 		return pawnshopId;
@@ -106,10 +107,14 @@ public class Pawnshop implements Serializable {
 	public void setPawnshopPostcodes(String pawnshopPostcodes) {
 		this.pawnshopPostcodes = pawnshopPostcodes;
 	}
+	
+	public String getPawnshopState() {
+		return pawnshopState;
+	}
 
-
-
-
+	public void setPawnshopState(String pawnshopState) {
+		this.pawnshopState = pawnshopState;
+	}
 
 
 	@OneToMany(mappedBy="pawnshopId", cascade={CascadeType.ALL})

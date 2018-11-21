@@ -24,6 +24,7 @@ public class Pawner implements Serializable {
 	private String pawnerPassword;
 	private String pawnerProvince;
 	private String pawnerPhone;
+	private String pawnerState;
 
 	public long getPawnerId() {
 		return pawnerId;
@@ -79,6 +80,15 @@ public class Pawner implements Serializable {
 	public void setPawnerPhone(String pawnerPhone) {
 		this.pawnerPhone = pawnerPhone;
 	}
+
+	public String getPawnerState() {
+		return pawnerState;
+	}
+
+	public void setPawnerState(String pawnerState) {
+		this.pawnerState = pawnerState;
+	}
+
 
 
 	@OneToMany(mappedBy="pawnerId", cascade={CascadeType.ALL})
