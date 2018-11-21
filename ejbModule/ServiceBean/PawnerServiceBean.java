@@ -62,4 +62,11 @@ public class PawnerServiceBean implements PawnerService {
 				.getSingleResult();
 	}
 
+	@Override
+	public void updatePawnerState(long pawnerId, String status) {
+		em.createQuery("update Pawner s set s.pawnerStatus =:staus WHERE s.pawnerId =:pawnerId" 
+				).setParameter("pawnerId", pawnerId).setParameter("staus", status).executeUpdate();
+		
+	}
+
 }

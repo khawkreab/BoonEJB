@@ -62,4 +62,12 @@ public class PawnshopServiceBean implements PawnshopService {
 		return (Pawnshop) em.createQuery("SELECT c FROM Pawnshop c WHERE c.pawnshopEmail =:email AND c.pawnshopPassword =:password").setParameter("email", email).setParameter("password", password).getSingleResult();
 	}
 
+	@Override
+	public void updatePawnshopState(long pawnshopId, String status) {
+		em.createQuery(
+				"update Pawnshop s set s.pawnshopPostStatus =:staus WHERE s.pawnshopId =:pawnshopId")
+				.setParameter("pawnshopId", pawnshopId).setParameter("staus", status).executeUpdate();
+		
+	}
+
 }
