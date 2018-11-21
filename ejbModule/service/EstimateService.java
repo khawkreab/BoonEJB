@@ -31,6 +31,8 @@ public interface EstimateService {
 	
 	public List<Estimate> findEstimateByPawnerIdAndStatus(long pawnerId , String status);
 	
+	public List<Estimate> findEstimateByPawnshopIdAndStatus(long pawnshopId , String status);
+	
 
 	public void updateStatus(long pawnerPostId, String staus);
 }

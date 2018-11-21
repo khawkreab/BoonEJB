@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import entity.Estimate;
+import entity.Pawnshop;
 import service.EstimateService;
 
 @Stateless
@@ -89,5 +90,11 @@ public class EstimateServiceBean implements EstimateService {
 		return this.em.createQuery(
 				"SELECT c FROM Estimate c WHERE c.pawnerPostId.pawnerPostId IN (SELECT p.pawnerPostId FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId) AND c.estimateStatus =:status ORDER BY c.estimateDate DESC")
 				.setParameter("pawnerId", pawnerId).setParameter("status", status).getResultList();
+	}
+
+	@Override
+	public List<Estimate> findEstimateByPawnshopIdAndStatus(long pawnshopId, String status) {
+		return this.em.createQuery("SELECT c FROM Estimate c WHERE c.pawnshopId.pawnshopId =:pawnshopId AND c.estimateStatus =:status").setParameter("pawnshopId", pawnshopId).setParameter("status", status).getResultList();
+		
 	}
 }
