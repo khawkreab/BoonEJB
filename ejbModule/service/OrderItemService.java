@@ -26,4 +26,5 @@ public interface OrderItemService {
 	
 	public List<OrderItem> findOrderByPawnerId(long pawnerId);
 
+	public List<OrderItem> findOrderByPawnshopId(long pawnshopId);
 }

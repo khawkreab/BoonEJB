@@ -60,6 +60,11 @@ public class OrderItemServiceBean implements OrderItemService {
 	public List<OrderItem> findOrderByPawnerId(long pawnerId) {
 		return this.em.createQuery("SELECT c FROM OrderItem c where c.pawnerId.pawnerId =:pawnerId ORDER BY c.orderItemDateIn DESC").setParameter("pawnerId", pawnerId).getResultList();
 	}
+	
+	@Override
+	public List<OrderItem> findOrderByPawnshopId(long pawnshopId) {
+		return this.em.createQuery("SELECT c FROM OrderItem c where c.pawnshopPostId.pawnshopId.pawnshopId =:pawnshopId").setParameter("pawnshopId", pawnshopId).getResultList();
+	}
 
 
 
