@@ -88,7 +88,7 @@ public class EstimateServiceBean implements EstimateService {
 	public List<Estimate> findEstimateByPawnerIdAndStatus(long pawnerId, String status) {
 		// TODO Auto-generated method stub
 		return this.em.createQuery(
-				"SELECT c FROM Estimate c WHERE c.pawnerPostId.pawnerPostId IN (SELECT p.pawnerPostId FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId) AND c.estimateStatus =:status ORDER BY c.estimateDate DESC")
+				"SELECT c FROM Estimate c WHERE c.pawnerPostId.pawnerPostId IN (SELECT p.pawnerPostId FROM PawnerPost p WHERE p.pawnerId.pawnerId =:pawnerId) AND c.estimateStatus =:status ")
 				.setParameter("pawnerId", pawnerId).setParameter("status", status).getResultList();
 	}
 

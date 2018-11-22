@@ -1,7 +1,7 @@
 /* 
 // page : PawnerPostServiceBean
 // version : 1.1
-// task : á¡é findPawnerPostByPawnshopId error 
+// task : ï¿½ï¿½ findPawnerPostByPawnshopId error 
 // edit by : khawkreab 
  */
 package ServiceBean;
@@ -52,7 +52,7 @@ public class PawnerPostServiceBean implements PawnerPostService{
 
 	@Override
 	public List<PawnerPost> getAllPawnerPost() {
-		return this.em.createQuery("SELECT c FROM PawnerPost c").getResultList();
+		return this.em.createQuery("SELECT c FROM PawnerPost c ORDER BY c.pawnerPostDate DESC").getResultList();
 	}
 
 	@Override
