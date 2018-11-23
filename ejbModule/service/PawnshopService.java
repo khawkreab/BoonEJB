@@ -12,6 +12,7 @@ public interface PawnshopService {
 	public void delete(long pawnshopId);
 	public List<Pawnshop> getAllPawnshop();
 	public List<Pawnshop> findPawnshopName(String name);
+	public List<Pawnshop> findPawnshopEmail(String email);
 	public Pawnshop findPawnShopByEmailAndPassword(String email, String password);
 	public void updatePawnshopState(long pawnshopId, String status);
 }
