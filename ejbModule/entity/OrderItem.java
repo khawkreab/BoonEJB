@@ -25,6 +25,7 @@ public class OrderItem implements Serializable {
 	private Date orderItemDateOut;
 	private Date orderItemDatePurchase;
 
+
 	public long getOrderItemId() {
 		return orderItemId;
 	}

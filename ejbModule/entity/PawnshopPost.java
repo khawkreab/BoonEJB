@@ -47,6 +47,9 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostHarddisk;
 	private String pawnshopPostRam;
 	private String pawnshopPostDevice;
+	private String pawnshopPostQuality;
+	private String pawnshopName;
+	
 	
 	private String pawnshopPostStatus;
 	
@@ -292,6 +295,22 @@ public class PawnshopPost implements Serializable{
 
 	public void setPawnshopPostPicture(String pawnshopPostPicture) {
 		this.pawnshopPostPicture = pawnshopPostPicture;
+	}
+
+	public String getPawnshopPostQuality() {
+		return pawnshopPostQuality;
+	}
+
+	public void setPawnshopPostQuality(String pawnshopPostQuality) {
+		this.pawnshopPostQuality = pawnshopPostQuality;
+	}
+
+	public String getPawnshopName() {
+		return pawnshopName;
+	}
+
+	public void setPawnshopName(String pawnshopName) {
+		this.pawnshopName = pawnshopName;
 	}
 
 

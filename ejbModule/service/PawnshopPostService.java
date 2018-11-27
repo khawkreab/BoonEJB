@@ -16,5 +16,5 @@ public interface PawnshopPostService {
 	
 	public void updatePicture(long pawnshopPostId, String picture);
 
-	public void updateStatus(long pawnshopPostId, String staus);
+	public void updateStatus(long pawnshopPostId, String staus, String quality);
 }

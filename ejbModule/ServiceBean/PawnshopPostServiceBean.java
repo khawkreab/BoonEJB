@@ -86,10 +86,10 @@ public class PawnshopPostServiceBean implements PawnshopPostService {
 	}
 
 	@Override
-	public void updateStatus(long pawnshopPostId, String staus) {
+	public void updateStatus(long pawnshopPostId, String staus, String quality) {
 		em.createQuery(
-				"update PawnshopPost s set s.pawnshopPostStatus =:staus WHERE s.pawnshopPostId =:pawnshopPostId")
-				.setParameter("pawnshopPostId", pawnshopPostId).setParameter("staus", staus).executeUpdate();
+				"update PawnshopPost s set s.pawnshopPostStatus =:staus , s.pawnshopPostQuality =:quality WHERE s.pawnshopPostId =:pawnshopPostId")
+				.setParameter("pawnshopPostId", pawnshopPostId).setParameter("staus", staus).setParameter("quality", quality).executeUpdate();
 
 	}
 
