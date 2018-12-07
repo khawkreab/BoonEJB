@@ -25,6 +25,16 @@ public class Pawner implements Serializable {
 	private String pawnerProvince;
 	private String pawnerPhone;
 	private String pawnerState;	
+	
+	private String userCode;
+
+	public String getUserCode() {
+		return userCode;
+	}
+
+	public void setUserCode(String userCode) {
+		this.userCode = userCode;
+	}
 
 	public long getPawnerId() {
 		return pawnerId;

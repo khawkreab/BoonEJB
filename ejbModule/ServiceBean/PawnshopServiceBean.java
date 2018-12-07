@@ -73,7 +73,7 @@ public class PawnshopServiceBean implements PawnshopService {
 
 	@Override
 	public List<Pawnshop> findPawnshopEmail(String email) {
-		return this.em.createQuery("SELECT c FROM Pawnshop c WHERE c.pawnshopEmail LIKE :email")
+		return this.em.createQuery("SELECT c FROM Pawnshop c WHERE c.pawnshopEmail =:email")
 				.setParameter("email", email + "%").getResultList();
 	}
 

@@ -28,6 +28,16 @@ public class Pawnshop implements Serializable {
 	private String pawnshopPostcodes;
 	private String pawnshopAddress;
 	private String pawnshopState;
+	private String userCode;
+	
+	
+	public String getUserCode() {
+		return userCode;
+	}
+
+	public void setUserCode(String userCode) {
+		this.userCode = userCode;
+	}
 
 	public long getPawnshopId() {
 		return pawnshopId;
