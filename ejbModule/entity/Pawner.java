@@ -24,9 +24,47 @@ public class Pawner implements Serializable {
 	private String pawnerPassword;
 	private String pawnerProvince;
 	private String pawnerPhone;
-	private String pawnerState;	
+	private String pawnerState;
+	
+	private String zipCode;
+	private String picture;
+	private String address;
+	private String cover;
 	
 	private String userCode;
+
+	
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCover() {
+		return cover;
+	}
+
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
 
 	public String getUserCode() {
 		return userCode;

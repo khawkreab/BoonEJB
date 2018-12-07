@@ -20,17 +20,42 @@ public class Pawnshop implements Serializable {
 	private String pawnshopEmail;
 	private String pawnshopPassword;
 	private String pawnshopName;
-	private String pawnshopCredential;
 	private String pawnshopProvince;
 	private String pawnshopTel;
-	private String pawnshopDistrict;
-	private String pawnshopParish;
-	private String pawnshopPostcodes;
 	private String pawnshopAddress;
 	private String pawnshopState;
+	
 	private String userCode;
 	
+	private String zipCode;
+	private String picture;
+	private String cover;
 	
+	
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
+	public String getCover() {
+		return cover;
+	}
+
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
+
 	public String getUserCode() {
 		return userCode;
 	}
@@ -71,14 +96,6 @@ public class Pawnshop implements Serializable {
 		this.pawnshopName = pawnshopName;
 	}
 
-	public String getPawnshopCredential() {
-		return pawnshopCredential;
-	}
-
-	public void setPawnshopCredential(String pawnshopCredential) {
-		this.pawnshopCredential = pawnshopCredential;
-	}
-
 	public String getPawnshopProvince() {
 		return pawnshopProvince;
 	}
@@ -94,30 +111,6 @@ public class Pawnshop implements Serializable {
 	public void setPawnshopTel(String pawnshopTel) {
 		this.pawnshopTel = pawnshopTel;
 	} 
-
-	public String getPawnshopDistrict() {
-		return pawnshopDistrict;
-	}
-
-	public void setPawnshopDistrict(String pawnshopDistrict) {
-		this.pawnshopDistrict = pawnshopDistrict;
-	}
-
-	public String getPawnshopParish() {
-		return pawnshopParish;
-	}
-
-	public void setPawnshopParish(String pawnshopParish) {
-		this.pawnshopParish = pawnshopParish;
-	}
-
-	public String getPawnshopPostcodes() {
-		return pawnshopPostcodes;
-	}
-
-	public void setPawnshopPostcodes(String pawnshopPostcodes) {
-		this.pawnshopPostcodes = pawnshopPostcodes;
-	}
 
 	public String getPawnshopAddress() {
 		return pawnshopAddress;
