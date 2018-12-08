@@ -26,52 +26,52 @@ public class Pawner implements Serializable {
 	private String pawnerPhone;
 	private String pawnerState;
 	
-	private String zipCode;
-	private String picture;
-	private String address;
-	private String cover;
+	private String pawnerZipcode;
+	private String pawnerPicture;
+	private String pawnerAddress;
+	private String pawnerCover;
 	
-	private String userCode;
+	private String pawnerUsercode;
 
 	
 	public String getZipCode() {
-		return zipCode;
+		return pawnerZipcode;
 	}
 
 	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+		this.pawnerZipcode = zipCode;
 	}
 
 	public String getPicture() {
-		return picture;
+		return pawnerPicture;
 	}
 
 	public void setPicture(String picture) {
-		this.picture = picture;
+		this.pawnerPicture = picture;
 	}
 
 	public String getAddress() {
-		return address;
+		return pawnerAddress;
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+		this.pawnerAddress = address;
 	}
 
 	public String getCover() {
-		return cover;
+		return pawnerCover;
 	}
 
 	public void setCover(String cover) {
-		this.cover = cover;
+		this.pawnerCover = cover;
 	}
 
 	public String getUserCode() {
-		return userCode;
+		return pawnerUsercode;
 	}
 
 	public void setUserCode(String userCode) {
-		this.userCode = userCode;
+		this.pawnerUsercode = userCode;
 	}
 
 	public long getPawnerId() {
