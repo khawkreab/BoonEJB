@@ -32,37 +32,6 @@ public class Pawnshop implements Serializable {
 	private String pawnshopCover;
 	
 	
-	public String getZipCode() {
-		return pawnshopZipcode;
-	}
-
-	public void setZipCode(String zipCode) {
-		this.pawnshopZipcode = zipCode;
-	}
-
-	public String getPicture() {
-		return pawnshopPicture;
-	}
-
-	public void setPicture(String picture) {
-		this.pawnshopPicture = picture;
-	}
-
-	public String getCover() {
-		return pawnshopCover;
-	}
-
-	public void setCover(String cover) {
-		this.pawnshopCover = cover;
-	}
-
-	public String getUserCode() {
-		return pawnshopUsercode;
-	}
-
-	public void setUserCode(String userCode) {
-		this.pawnshopUsercode = userCode;
-	}
 
 	public long getPawnshopId() {
 		return pawnshopId;
@@ -127,6 +96,39 @@ public class Pawnshop implements Serializable {
 	public void setPawnshopState(String pawnshopState) {
 		this.pawnshopState = pawnshopState;
 	}
+
+	public String getPawnshopUsercode() {
+		return pawnshopUsercode;
+	}
+
+	public void setPawnshopUsercode(String pawnshopUsercode) {
+		this.pawnshopUsercode = pawnshopUsercode;
+	}
+
+	public String getPawnshopZipcode() {
+		return pawnshopZipcode;
+	}
+
+	public void setPawnshopZipcode(String pawnshopZipcode) {
+		this.pawnshopZipcode = pawnshopZipcode;
+	}
+
+	public String getPawnshopPicture() {
+		return pawnshopPicture;
+	}
+
+	public void setPawnshopPicture(String pawnshopPicture) {
+		this.pawnshopPicture = pawnshopPicture;
+	}
+
+	public String getPawnshopCover() {
+		return pawnshopCover;
+	}
+
+	public void setPawnshopCover(String pawnshopCover) {
+		this.pawnshopCover = pawnshopCover;
+	}
+
 
 
 	@OneToMany(mappedBy="pawnshopId", cascade={CascadeType.ALL})

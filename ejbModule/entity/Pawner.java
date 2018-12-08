@@ -34,46 +34,6 @@ public class Pawner implements Serializable {
 	private String pawnerUsercode;
 
 	
-	public String getZipCode() {
-		return pawnerZipcode;
-	}
-
-	public void setZipCode(String zipCode) {
-		this.pawnerZipcode = zipCode;
-	}
-
-	public String getPicture() {
-		return pawnerPicture;
-	}
-
-	public void setPicture(String picture) {
-		this.pawnerPicture = picture;
-	}
-
-	public String getAddress() {
-		return pawnerAddress;
-	}
-
-	public void setAddress(String address) {
-		this.pawnerAddress = address;
-	}
-
-	public String getCover() {
-		return pawnerCover;
-	}
-
-	public void setCover(String cover) {
-		this.pawnerCover = cover;
-	}
-
-	public String getUserCode() {
-		return pawnerUsercode;
-	}
-
-	public void setUserCode(String userCode) {
-		this.pawnerUsercode = userCode;
-	}
-
 	public long getPawnerId() {
 		return pawnerId;
 	}
@@ -129,6 +89,45 @@ public class Pawner implements Serializable {
 		this.pawnerPhone = pawnerPhone;
 	}
 
+	public String getPawnerZipcode() {
+		return pawnerZipcode;
+	}
+
+	public void setPawnerZipcode(String pawnerZipcode) {
+		this.pawnerZipcode = pawnerZipcode;
+	}
+
+	public String getPawnerPicture() {
+		return pawnerPicture;
+	}
+
+	public void setPawnerPicture(String pawnerPicture) {
+		this.pawnerPicture = pawnerPicture;
+	}
+
+	public String getPawnerAddress() {
+		return pawnerAddress;
+	}
+
+	public void setPawnerAddress(String pawnerAddress) {
+		this.pawnerAddress = pawnerAddress;
+	}
+
+	public String getPawnerCover() {
+		return pawnerCover;
+	}
+
+	public void setPawnerCover(String pawnerCover) {
+		this.pawnerCover = pawnerCover;
+	}
+
+	public String getPawnerUsercode() {
+		return pawnerUsercode;
+	}
+
+	public void setPawnerUsercode(String pawnerUsercode) {
+		this.pawnerUsercode = pawnerUsercode;
+	}
 
 	public String getPawnerState() {
 		return pawnerState;
