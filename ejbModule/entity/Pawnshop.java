@@ -25,43 +25,43 @@ public class Pawnshop implements Serializable {
 	private String pawnshopAddress;
 	private String pawnshopState;
 	
-	private String pawnerUsercode;
+	private String pawnshopUsercode;
 	
-	private String pawnerZipcode;
-	private String pawnerPicture;
-	private String pawnerCover;
+	private String pawnshopZipcode;
+	private String pawnshopPicture;
+	private String pawnshopCover;
 	
 	
 	public String getZipCode() {
-		return pawnerZipcode;
+		return pawnshopZipcode;
 	}
 
 	public void setZipCode(String zipCode) {
-		this.pawnerZipcode = zipCode;
+		this.pawnshopZipcode = zipCode;
 	}
 
 	public String getPicture() {
-		return pawnerPicture;
+		return pawnshopPicture;
 	}
 
 	public void setPicture(String picture) {
-		this.pawnerPicture = picture;
+		this.pawnshopPicture = picture;
 	}
 
 	public String getCover() {
-		return pawnerCover;
+		return pawnshopCover;
 	}
 
 	public void setCover(String cover) {
-		this.pawnerCover = cover;
+		this.pawnshopCover = cover;
 	}
 
 	public String getUserCode() {
-		return pawnerUsercode;
+		return pawnshopUsercode;
 	}
 
 	public void setUserCode(String userCode) {
-		this.pawnerUsercode = userCode;
+		this.pawnshopUsercode = userCode;
 	}
 
 	public long getPawnshopId() {

@@ -13,5 +13,6 @@ public interface PawnerService {
 	public Pawner findPawnerByEmailAndPassword(String email, String password);
 	public List<Pawner> findPawnerEmai(String email);
 	public void updatePawnerState(long pawnerId, String status);
+	public Pawner findPawnerByUsercode(String usercode);
 
 }

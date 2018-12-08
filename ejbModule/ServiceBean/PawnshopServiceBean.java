@@ -77,4 +77,10 @@ public class PawnshopServiceBean implements PawnshopService {
 				.setParameter("email", email + "%").getResultList();
 	}
 
+	@Override
+	public Pawnshop findPawnShopByUsercode(String usercode) {
+		return (Pawnshop) em
+				.createQuery("SELECT c FROM Pawnshop c WHERE c.pawnshopUsercode =:usercode").setParameter("usercode", usercode).getSingleResult();
+	}
+
 }

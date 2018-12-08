@@ -76,4 +76,9 @@ public class PawnerServiceBean implements PawnerService {
 		
 	}
 
+	@Override
+	public Pawner findPawnerByUsercode(String usercode) {
+		return (Pawner) this.em.createQuery("SELECT p FROM Pawner p WHERE p.pawnerUsercode =:usercode ").setParameter("usercode", usercode).getSingleResult();
+	}
+
 }
