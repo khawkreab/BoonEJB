@@ -59,7 +59,7 @@ public class PawnerServiceBean implements PawnerService {
 	@Override
 	public List<Pawner> findPawnerEmai(String email) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("SELECT p FROM Pawner p WHERE p.pawnerEmail =:email").setParameter("email", email + "%").getResultList();
+		return this.em.createQuery("SELECT p FROM Pawner p WHERE p.pawnerEmail LIKE :email").setParameter("email", email + "%").getResultList();
 	}
 	
 	

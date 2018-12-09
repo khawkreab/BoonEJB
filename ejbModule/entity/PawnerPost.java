@@ -58,6 +58,14 @@ public class PawnerPost implements Serializable{
 	
 	private String pawnerPostPicture;
 	
+	private String pawnerPostCode;
+	
+	public String getPawnerPostCode() {
+		return pawnerPostCode;
+	}
+	public void setPawnerPostCode(String pawnerPostCode) {
+		this.pawnerPostCode = pawnerPostCode;
+	}
 	public String getPawnerPostSize() {
 		return pawnerPostSize;
 	}
