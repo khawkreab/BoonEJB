@@ -48,8 +48,6 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostRam;
 	private String pawnshopPostDevice;
 	private String pawnshopPostQuality;
-	private String pawnshopName;
-	
 	
 	private String pawnshopPostStatus;
 	
@@ -316,16 +314,6 @@ public class PawnshopPost implements Serializable{
 	public void setPawnshopPostQuality(String pawnshopPostQuality) {
 		this.pawnshopPostQuality = pawnshopPostQuality;
 	}
-
-	public String getPawnshopName() {
-		return pawnshopName;
-	}
-
-	public void setPawnshopName(String pawnshopName) {
-		this.pawnshopName = pawnshopName;
-	}
-
-
 
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Pawnshop pawnshopId;
