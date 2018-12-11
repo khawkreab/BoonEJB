@@ -27,6 +27,8 @@ public class PawnerPost implements Serializable{
 	private long pawnerPostId;
 	
 	private Date pawnerPostDate;
+	private Date pawnerPostPurchase;
+	
 	private String pawnerPostItemType;
 	private String pawnerPostName;
 	private String pawnerPostDescription;
@@ -46,7 +48,7 @@ public class PawnerPost implements Serializable{
 	private String pawnerPostSize;
 	private String panwePostRemote;
 	private String pawnerPostCapacity;
-	private String pawnerPostPurchase;
+	
 	private String pawnerPostBattery;
 	private String pawnerPostTypeCamera;
 	private String pawnerPostCameraLen;
@@ -60,6 +62,14 @@ public class PawnerPost implements Serializable{
 	
 	private String pawnerPostCode;
 	
+	
+	
+	public Date getPawnerPostPurchase() {
+		return pawnerPostPurchase;
+	}
+	public void setPawnerPostPurchase(Date pawnerPostPurchase) {
+		this.pawnerPostPurchase = pawnerPostPurchase;
+	}
 	public String getPawnerPostCode() {
 		return pawnerPostCode;
 	}
@@ -83,12 +93,6 @@ public class PawnerPost implements Serializable{
 	}
 	public void setPawnerPostCapacity(String pawnerPostCapacity) {
 		this.pawnerPostCapacity = pawnerPostCapacity;
-	}
-	public String getPawnerPostPurchase() {
-		return pawnerPostPurchase;
-	}
-	public void setPawnerPostPurchase(String pawnerPostPurchase) {
-		this.pawnerPostPurchase = pawnerPostPurchase;
 	}
 	public String getPawnerPostBattery() {
 		return pawnerPostBattery;

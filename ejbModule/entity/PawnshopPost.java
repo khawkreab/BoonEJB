@@ -20,6 +20,7 @@ public class PawnshopPost implements Serializable{
 	private long pawnshopPostId;
 	
 	private Date pawnshopPostDate;
+	private Date pawnshopPostPurchase;
 	
 	private String pawnshopPostItemType;
 	private String pawnshopPostName;
@@ -40,7 +41,6 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostSize;
 	private String pawnshopPostRemote;
 	private String pawnshopPostCapacity;
-	private String pawnshopPostPurchase;
 	private String pawnshopPostBattery;
 	private String pawnshopPostTypeCamera;
 	private String pawnshopPostCameraLen;
@@ -58,6 +58,14 @@ public class PawnshopPost implements Serializable{
 	private String pawnshopPostCode;
 	
 	
+
+	public Date getPawnshopPostPurchase() {
+		return pawnshopPostPurchase;
+	}
+
+	public void setPawnshopPostPurchase(Date pawnshopPostPurchase) {
+		this.pawnshopPostPurchase = pawnshopPostPurchase;
+	}
 
 	public String getPawnshopPostCode() {
 		return pawnshopPostCode;
@@ -225,14 +233,6 @@ public class PawnshopPost implements Serializable{
 
 	public void setPawnshopPostCapacity(String pawnshopPostCapacity) {
 		this.pawnshopPostCapacity = pawnshopPostCapacity;
-	}
-
-	public String getPawnshopPostPurchase() {
-		return pawnshopPostPurchase;
-	}
-
-	public void setPawnshopPostPurchase(String pawnshopPostPurchase) {
-		this.pawnshopPostPurchase = pawnshopPostPurchase;
 	}
 
 	public String getPawnshopPostBattery() {
